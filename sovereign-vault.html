@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sovereign Vault — Barca Labs</title>
+<meta name="description" content="Peptides, hormones, supplements, labs and wearables — every input and every result, together in one private, encrypted vault on your phone.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230a0b0d'/><g stroke='%23d8b47a' stroke-width='9' fill='none'><path d='M37 11 L53 27'/><path d='M53 37 L37 53'/><path d='M27 53 L11 37'/><path d='M11 27 L27 11'/></g></svg>">
+
+<style>
+  :root{
+    --ink:#0a0b0d; --surface:#14161a; --line:#22262c;
+    --muted:#828994; --secondary:#b6bcc4; --text:#f2efe9; --accent:#d8b47a;
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--ink); color:var(--text); font-family:var(--sans); font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased}
+  .wrap{max-width:680px; margin:0 auto; padding:0 28px}
+  a{color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(216,180,122,.3)}
+  a:hover{border-bottom-color:var(--accent)}
+
+  .site{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; padding:38px 0 0}
+  .wordmark{display:inline-flex; flex-direction:column; align-items:flex-start; gap:10px; border-bottom:none}
+  .wordmark .rule{width:40px; height:1px; background:var(--accent)}
+  .wordmark .name{font-size:14px; font-weight:500; letter-spacing:.19em; text-transform:uppercase; color:var(--text)}
+  nav{display:flex; gap:26px; align-items:center}
+  nav a{font-size:13.5px; color:var(--secondary); border-bottom:1px solid transparent}
+  nav a:hover{color:var(--text); border-bottom-color:rgba(216,180,122,.5)}
+  nav a[aria-current]{color:var(--accent)}
+  .navtoggle{display:none}
+  .burger{display:none; cursor:pointer; padding:8px; margin:-8px}
+  .burger span{display:block; width:20px; height:1.5px; background:var(--secondary); margin:4px 0}
+
+  .crumb{padding:42px 0 0; font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+  .crumb a{color:var(--muted); border-bottom-color:transparent}
+
+  .hero{padding:26px 0 70px; border-bottom:1px solid var(--line)}
+  h1{font-size:36px; line-height:1.2; font-weight:600; letter-spacing:-.019em; margin:0 0 20px; max-width:18ch}
+  .standfirst{font-size:18.5px; color:var(--secondary); margin:0 0 22px; max-width:56ch}
+  .lead{font-size:16px; color:var(--muted); margin:0; max-width:60ch}
+
+  section{padding:64px 0; border-bottom:1px solid var(--line)}
+  h2{font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; font-weight:600; color:var(--muted); margin:0 0 12px}
+  .h2sub{font-size:22px; font-weight:600; letter-spacing:-.012em; margin:0 0 28px; color:var(--text)}
+  p{margin:0 0 18px; color:var(--secondary); max-width:60ch}
+
+  .cats{display:flex; flex-wrap:wrap; gap:9px; margin:0}
+  .cat{
+    font-size:13.5px; color:var(--secondary); border:1px solid var(--line);
+    border-radius:3px; padding:7px 13px; background:var(--surface);
+  }
+
+  .steps{counter-reset:s; margin:0; padding:0; list-style:none}
+  .steps li{
+    counter-increment:s; padding:22px 0 22px 44px; border-top:1px solid var(--line); position:relative;
+  }
+  .steps li:last-child{border-bottom:1px solid var(--line)}
+  .steps li::before{
+    content:counter(s); position:absolute; left:0; top:24px;
+    font-size:11px; color:var(--accent); font-weight:600; letter-spacing:.06em;
+  }
+  .steps .t{font-size:16.5px; color:var(--text); font-weight:500; margin:0 0 5px}
+  .steps .d{font-size:15px; color:var(--secondary); margin:0}
+
+  .why{padding:24px 0; border-top:1px solid var(--line)}
+  .why:last-of-type{border-bottom:1px solid var(--line)}
+  .why .t{font-size:16.5px; color:var(--text); font-weight:500; margin:0 0 6px}
+  .why .d{font-size:15px; color:var(--secondary); margin:0; max-width:58ch}
+
+  .note{font-size:14.5px; color:var(--muted); max-width:62ch}
+
+  footer{padding:48px 0 84px; color:var(--muted); font-size:13.5px}
+  footer p{color:var(--muted); font-size:13.5px; margin:0 0 10px; max-width:none}
+  footer .legal{margin-top:20px; padding-top:20px; border-top:1px solid var(--line)}
+
+  @media (max-width:640px){
+    .site{padding-top:30px}
+    .burger{display:block}
+    nav{display:none; width:100%; flex-direction:column; align-items:flex-start; gap:0; margin-top:20px; border-top:1px solid var(--line)}
+    nav a{padding:15px 0; width:100%; border-bottom:1px solid var(--line); font-size:15px}
+    .navtoggle:checked ~ nav{display:flex}
+    h1{font-size:28px; max-width:none}
+    .standfirst{font-size:17px}
+    section{padding:48px 0}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="site">
+    <a class="wordmark" href="/"><span class="rule"></span><span class="name">Barca Labs</span></a>
+    <input type="checkbox" id="navtoggle" class="navtoggle" aria-label="Open menu">
+    <label for="navtoggle" class="burger"><span></span><span></span><span></span></label>
+    <nav>
+      <a href="/sovereign-vault" aria-current="page">Sovereign Vault</a>
+      <a href="/privacy">Privacy</a>
+    </nav>
+  </header>
+
+  <p class="crumb"><a href="/">Barca Labs</a> · Products</p>
+
+  <div class="hero">
+    <h1>Track your protocol. Own your data.</h1>
+    <p class="standfirst">Peptides, hormones, supplements, labs and wearables — every input and
+    every result, together in one encrypted vault on your phone.</p>
+    <p class="lead">The more you measure, the more your health becomes the thing you actually want
+    to work on. Sovereign Vault puts the whole picture in one place, so the patterns you'd never
+    spot across a dozen scattered apps finally show up.</p>
+  </div>
+
+  <section>
+    <h2>Everything in one vault</h2>
+    <p class="h2sub">Made for the way you actually run it</p>
+    <div class="cats">
+      <span class="cat">Peptides &amp; cycles</span>
+      <span class="cat">Hormones</span>
+      <span class="cat">HRT</span>
+      <span class="cat">TRT</span>
+      <span class="cat">Supplements &amp; dosing</span>
+      <span class="cat">Lab biomarkers</span>
+      <span class="cat">Wearables — HRV, sleep, steps</span>
+      <span class="cat">Workouts &amp; training</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>How it works</h2>
+    <p class="h2sub">Four steps to the full picture</p>
+    <ol class="steps">
+      <li>
+        <p class="t">Log your protocol</p>
+        <p class="d">Compounds, doses, timing, and your lab results — entered once, kept exactly as
+        you confirm them.</p>
+      </li>
+      <li>
+        <p class="t">Sync your wearables</p>
+        <p class="d">HRV, sleep, resting heart rate and more, pulled in from Apple Health, Health
+        Connect, and Polar.</p>
+      </li>
+      <li>
+        <p class="t">See it on one timeline</p>
+        <p class="d">Your inputs and your body's response, side by side, so cause and effect stop
+        living in separate apps.</p>
+      </li>
+      <li>
+        <p class="t">Export the record</p>
+        <p class="d">Your intake history, lab results and wearable data in one structured file —
+        JSON or Markdown. Take it to your own review, to the AI you trust, or to a clinician —
+        where it goes is entirely your call.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Why Sovereign</h2>
+    <p class="h2sub">Your health data, kept sovereign</p>
+
+    <div class="why">
+      <p class="t">Local-first and encrypted</p>
+      <p class="d">Everything lives on your device, encrypted, behind your PIN and your fingerprint.
+      No copy of your records on our servers — because we don't run any.</p>
+    </div>
+    <div class="why">
+      <p class="t">You own every byte</p>
+      <p class="d">No account harvesting your protocol. Export it any time, delete it any time.</p>
+    </div>
+    <div class="why">
+      <p class="t">Built for self-experimenters</p>
+      <p class="d">For people running real protocols and reading their own labs — not a generic
+      wellness app with a step counter bolted on.</p>
+    </div>
+
+    <p class="note" style="margin-top:28px">The app makes a small number of network requests —
+    checking for updates, and syncing Polar if you connect it. Every one is listed in the
+    <a href="/privacy">privacy policy</a>, with what it sends and why. The encryption specifics,
+    and what they do not cover, are on the <a href="/security">security page</a>.</p>
+  </section>
+
+  <!-- EDIT ME: replace with store links once live -->
+  <section>
+    <h2>Availability</h2>
+    <p>Sovereign Vault is in testing ahead of release on the App Store, with Google Play to follow.</p>
+    <p>Questions: <a href="mailto:support@barcalabs.com">support@barcalabs.com</a></p>
+  </section>
+
+  <footer>
+    <p>Sovereign Vault is made by Barca Labs, LLC · Kansas, United States</p>
+    <p><a href="mailto:support@barcalabs.com">support@barcalabs.com</a> · <a href="tel:+13165302830">316-530-2830</a></p>
+    <div class="legal">
+      <p><a href="/">Barca Labs</a> · <a href="/privacy">Privacy policy</a></p>
+      <p style="margin-top:10px">© 2026 Barca Labs, LLC</p>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Barca Labs</title>
+<meta name="description" content="Barca Labs, LLC — veteran owned. Maker of Sovereign Vault.">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230a0b0d'/><g stroke='%23d8b47a' stroke-width='9' fill='none'><path d='M37 11 L53 27'/><path d='M53 37 L37 53'/><path d='M27 53 L11 37'/><path d='M11 27 L27 11'/></g></svg>">
+
+<style>
+  /* Brand tokens — placeholder identity. Change these values and the
+     whole site changes with them. */
+  :root{
+    --ink:#0a0b0d; --surface:#14161a; --line:#22262c;
+    --muted:#828994; --secondary:#b6bcc4; --text:#f2efe9; --accent:#d8b47a;
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--ink); color:var(--text);
+    font-family:var(--sans); font-size:16px; line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:620px; margin:0 auto; padding:0 30px}
+  a{color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(216,180,122,.28)}
+  a:hover{border-bottom-color:var(--accent)}
+
+  /* ---- Top bar: nav only. The name lives in the masthead below,
+          so a second small wordmark up here would be redundant. ---- */
+  .topbar{display:flex; justify-content:flex-end; align-items:center; padding:34px 0 0; position:relative}
+  nav{display:flex; gap:26px; align-items:center}
+  nav a{font-size:13.5px; color:var(--secondary); border-bottom:1px solid transparent}
+  nav a:hover{color:var(--text); border-bottom-color:rgba(216,180,122,.5)}
+  .navtoggle{display:none}
+  .burger{display:none; cursor:pointer; padding:8px; margin:-8px}
+  .burger span{display:block; width:20px; height:1.5px; background:var(--secondary); margin:4px 0}
+
+  /* ---- Masthead: the name IS the page ---- */
+  .masthead{padding:104px 0 128px}
+  .masthead .rule{width:66px; height:1px; background:var(--accent); margin:0 0 26px}
+  .masthead h1{
+    font-size:clamp(34px, 10vw, 66px);
+    line-height:1.05;
+    font-weight:500;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--text);
+    margin:0 0 26px;
+    white-space:nowrap;
+  }
+  .masthead .tag{
+    font-size:11px; letter-spacing:.24em; text-transform:uppercase;
+    color:var(--accent); font-weight:600; margin:0;
+  }
+
+  /* ---- Everything below is deliberately small ---- */
+  .block{padding:34px 0; border-top:1px solid var(--line)}
+  .block h2{
+    font-size:10px; letter-spacing:.2em; text-transform:uppercase;
+    font-weight:600; color:var(--muted); margin:0 0 16px;
+  }
+  .item .n{font-size:15.5px; color:var(--text); font-weight:500}
+  .item .d{font-size:14px; color:var(--muted); margin:3px 0 0}
+  .contact p{margin:0 0 5px; font-size:15px; color:var(--secondary)}
+
+  footer{padding:34px 0 96px; border-top:1px solid var(--line); color:var(--muted); font-size:12.5px}
+  footer p{margin:0 0 8px}
+
+  @media (max-width:640px){
+    .topbar{padding-top:26px; justify-content:space-between}
+    .burger{display:block; order:2; margin-left:auto}
+    nav{
+      display:none; width:100%; flex-direction:column; align-items:flex-start;
+      gap:0; margin-top:18px; border-top:1px solid var(--line); order:3;
+    }
+    nav a{padding:15px 0; width:100%; border-bottom:1px solid var(--line); font-size:15px}
+    .navtoggle:checked ~ nav{display:flex}
+    .masthead{padding:72px 0 88px}
+    .masthead h1{letter-spacing:.06em}
+    .masthead .rule{width:52px; margin-bottom:22px}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="topbar">
+    <input type="checkbox" id="navtoggle" class="navtoggle" aria-label="Open menu">
+    <label for="navtoggle" class="burger"><span></span><span></span><span></span></label>
+    <nav>
+      <a href="/sovereign-vault">Sovereign Vault</a>
+      <a href="/privacy">Privacy</a>
+    </nav>
+  </div>
+
+  <!-- The name is the content. Everything else supports it. -->
+  <div class="masthead">
+    <div class="rule"></div>
+    <h1>Barca Labs</h1>
+    <p class="tag">Veteran owned</p>
+  </div>
+
+  <!-- EDIT ME: add a second .item here when there is a second product -->
+  <div class="block">
+    <h2>Products</h2>
+    <div class="item">
+      <div class="n"><a href="/sovereign-vault">Sovereign Vault</a></div>
+      <p class="d">Encrypted health protocol tracking. iOS and Android.</p>
+    </div>
+  </div>
+
+  <div class="block contact">
+    <h2>Contact</h2>
+    <p><a href="mailto:support@barcalabs.com">support@barcalabs.com</a></p>
+    <p><a href="tel:+13165302830">316-530-2830</a></p>
+  </div>
+
+  <footer>
+    <p>Barca Labs, LLC · Kansas, United States</p>
+    <p><a href="/privacy">Privacy policy</a></p>
+    <p style="margin-top:14px">© 2026 Barca Labs, LLC</p>
+  </footer>
+
+</div>
+</body>
+</html>

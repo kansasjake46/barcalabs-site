@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security — Sovereign Vault</title>
+<meta name="description" content="How Sovereign Vault encrypts your data on your device, and what that protection does and does not cover.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230a0b0d'/><g stroke='%23d8b47a' stroke-width='9' fill='none'><path d='M37 11 L53 27'/><path d='M53 37 L37 53'/><path d='M27 53 L11 37'/><path d='M11 27 L27 11'/></g></svg>">
+
+<style>
+  :root{
+    --ink:#0a0b0d; --surface:#14161a; --line:#22262c;
+    --muted:#828994; --secondary:#b6bcc4; --text:#f2efe9; --accent:#d8b47a;
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--ink); color:var(--text); font-family:var(--sans); font-size:16px; line-height:1.68; -webkit-font-smoothing:antialiased}
+  .wrap{max-width:660px; margin:0 auto; padding:0 28px}
+  a{color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(216,180,122,.3)}
+  a:hover{border-bottom-color:var(--accent)}
+
+  .site{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; padding:38px 0 0}
+  .wordmark{display:inline-flex; flex-direction:column; align-items:flex-start; gap:10px; border-bottom:none}
+  .wordmark .rule{width:40px; height:1px; background:var(--accent)}
+  .wordmark .name{font-size:14px; font-weight:500; letter-spacing:.19em; text-transform:uppercase; color:var(--text)}
+  nav{display:flex; gap:26px; align-items:center}
+  nav a{font-size:13.5px; color:var(--secondary); border-bottom:1px solid transparent}
+  nav a:hover{color:var(--text); border-bottom-color:rgba(216,180,122,.5)}
+  nav a[aria-current]{color:var(--accent)}
+  .navtoggle{display:none}
+  .burger{display:none; cursor:pointer; padding:8px; margin:-8px}
+  .burger span{display:block; width:20px; height:1.5px; background:var(--secondary); margin:4px 0}
+
+  .crumb{padding:42px 0 0; font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+  .crumb a{color:var(--muted); border-bottom-color:transparent}
+
+  .title{padding:26px 0 40px; border-bottom:1px solid var(--line)}
+  h1{font-size:32px; line-height:1.22; font-weight:600; letter-spacing:-.018em; margin:0 0 16px}
+  .standfirst{font-size:17.5px; color:var(--secondary); margin:0; max-width:56ch}
+
+  h2{font-size:19px; font-weight:600; letter-spacing:-.01em; margin:46px 0 14px}
+  p{margin:0 0 18px; color:var(--secondary); max-width:60ch}
+  strong{color:var(--text); font-weight:600}
+  code{font-family:var(--mono); font-size:13px; color:var(--accent); background:var(--surface); padding:2px 6px; border-radius:3px; border:1px solid var(--line)}
+
+  table{width:100%; border-collapse:collapse; font-size:14.5px; margin:0 0 20px}
+  th{text-align:left; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:600; padding:0 16px 12px 0; border-bottom:1px solid var(--line)}
+  td{padding:14px 16px 14px 0; border-bottom:1px solid var(--line); vertical-align:top; color:var(--secondary)}
+  td:first-child{color:var(--text); font-weight:500; white-space:nowrap}
+
+  ul{margin:0 0 18px; padding-left:22px; color:var(--secondary)}
+  li{margin-bottom:11px}
+
+  .callout{background:var(--surface); border:1px solid var(--line); border-left:2px solid var(--accent); border-radius:4px; padding:22px 24px; margin:32px 0}
+  .callout p{margin:0; color:var(--text)}
+
+  footer{margin-top:66px; padding:34px 0 84px; border-top:1px solid var(--line); color:var(--muted); font-size:13.5px}
+  footer p{color:var(--muted); font-size:13.5px; margin:0 0 10px}
+
+  @media (max-width:640px){
+    h1{font-size:26px}
+    .site{padding-top:30px}
+    .burger{display:block}
+    nav{display:none; width:100%; flex-direction:column; align-items:flex-start; gap:0; margin-top:20px; border-top:1px solid var(--line)}
+    nav a{padding:15px 0; width:100%; border-bottom:1px solid var(--line); font-size:15px}
+    .navtoggle:checked ~ nav{display:flex}
+    table, thead, tbody, tr, td, th{display:block; width:100%}
+    thead{display:none}
+    td{padding:6px 0; border:none}
+    tr{border-bottom:1px solid var(--line); padding:14px 0; display:block}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="site">
+    <a class="wordmark" href="/"><span class="rule"></span><span class="name">Barca Labs</span></a>
+    <input type="checkbox" id="navtoggle" class="navtoggle" aria-label="Open menu">
+    <label for="navtoggle" class="burger"><span></span><span></span><span></span></label>
+    <nav>
+      <a href="/sovereign-vault">Sovereign Vault</a>
+      <a href="/privacy">Privacy</a>
+    </nav>
+  </header>
+
+  <p class="crumb"><a href="/sovereign-vault">Sovereign Vault</a> · Security</p>
+
+  <div class="title">
+    <h1>How your data is protected</h1>
+    <p class="standfirst">The specifics, for people who want them — including what this protection
+    does not cover.</p>
+  </div>
+
+  <h2>The encryption</h2>
+  <table>
+    <thead><tr><th>Component</th><th>Implementation</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Database</td>
+        <td>SQLCipher, via the <code>expo-sqlite</code> config plugin. The database file is
+        ciphertext at rest.</td>
+      </tr>
+      <tr>
+        <td>Key derivation</td>
+        <td>PBKDF2-HMAC-SHA256 at 310,000 iterations, derived directly from the PIN you set.</td>
+      </tr>
+      <tr>
+        <td>Salt storage</td>
+        <td><code>expo-secure-store</code> — the Keychain on iOS, the Keystore on Android.</td>
+      </tr>
+      <tr>
+        <td>Biometric unlock</td>
+        <td>Generates no separate key material. It gates access to the same PIN-derived key behind
+        <code>requireAuthentication</code>.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>The key is derived on your device and never leaves it. We hold no copy of it and no copy of
+  your data. <strong>If you forget your PIN, we cannot reset it, and your records cannot be
+  recovered.</strong> That follows from the design rather than being an oversight — plan your own
+  backups accordingly.</p>
+
+  <div class="callout">
+    <p>Biometric unlock is a faster route to the same key, not a second way in. If someone has your
+    PIN, biometrics do not add a second lock. If they have neither, the database is unreadable
+    ciphertext.</p>
+  </div>
+
+  <h2>What this does not protect against</h2>
+  <p>Encryption at rest solves one problem well and several others not at all. Rather than let the
+  phrase imply more than it delivers:</p>
+  <ul>
+    <li><strong>Device backups, and the two platforms differ.</strong> On <strong>Android</strong>,
+    the supporting key material is excluded from cloud backups and device-to-device transfers. On
+    <strong>iOS it is not</strong> — the default Keychain accessibility class carries into an
+    encrypted iCloud or computer backup and can be restored to a new device. It is excluded only
+    from <em>unencrypted</em> local backups. If your threat model includes someone with access to
+    your encrypted backups, that is a real difference and you should know about it.</li>
+    <li><strong>An unlocked device in someone else's hands.</strong> With your phone and your PIN or
+    biometric, the app shows them your records exactly as it shows you. No encryption scheme helps
+    here.</li>
+    <li><strong>A jailbroken or rooted device.</strong> Keychain and Keystore isolation can
+    potentially be defeated where the operating system's protections have been removed.</li>
+    <li><strong>Anything you export.</strong> Once a copy leaves the app it is governed by wherever
+    you put it. See below.</li>
+  </ul>
+
+  <h2>What leaves the device</h2>
+  <p>The app makes a small number of network requests and none of them carry your records. Each one
+  is described in full, including what it sends and why, in the
+  <a href="/privacy">privacy policy</a>.</p>
+  <p><strong>We run no server.</strong> There is no account, no sync service, and no infrastructure
+  of ours holding a copy — which also means there is nothing of yours for us to lose, sell, or be
+  compelled to produce.</p>
+
+  <h2>Exports</h2>
+  <p>The app can produce an export of your record as a structured file. It is yours.</p>
+  <p>Once you place it somewhere else — an AI assistant, an email, a cloud drive, a printout — that
+  copy is governed by whatever you put it into, and it is outside our reach entirely. Nothing we do
+  protects a copy you have handed to someone else. That is the trade for being able to take your
+  data anywhere you want it.</p>
+
+  <footer>
+    <p><a href="/sovereign-vault">Sovereign Vault</a> · <a href="/privacy">Privacy policy</a> ·
+    <a href="/">Barca Labs</a></p>
+    <p>© 2026 Barca Labs, LLC</p>
+  </footer>
+
+</div>
+</body>
+</html>
