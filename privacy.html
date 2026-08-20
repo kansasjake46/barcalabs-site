@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Barca Labs</title>
+<meta name="description" content="Privacy policy for Barca Labs, LLC and Sovereign Vault. What the app stores, where it stores it, and every connection it makes.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230a0b0d'/><g stroke='%23d8b47a' stroke-width='9' fill='none'><path d='M37 11 L53 27'/><path d='M53 37 L37 53'/><path d='M27 53 L11 37'/><path d='M11 27 L27 11'/></g></svg>">
+
+<style>
+  :root{
+    --ink:#0a0b0d; --surface:#14161a; --line:#22262c;
+    --muted:#828994; --secondary:#b6bcc4; --text:#f2efe9; --accent:#d8b47a;
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--ink); color:var(--text);
+    font-family:var(--sans); font-size:16px; line-height:1.68;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:680px; margin:0 auto; padding:0 28px}
+  a{color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(216,180,122,.3)}
+  a:hover{border-bottom-color:var(--accent)}
+
+  .site{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; padding:38px 0 0}
+  .wordmark{display:inline-flex; flex-direction:column; align-items:flex-start; gap:10px; border-bottom:none}
+  .wordmark .rule{width:40px; height:1px; background:var(--accent)}
+  .wordmark .name{font-size:14px; font-weight:500; letter-spacing:.19em; text-transform:uppercase; color:var(--text)}
+  nav{display:flex; gap:26px; align-items:center}
+  nav a{font-size:13.5px; color:var(--secondary); border-bottom:1px solid transparent}
+  nav a:hover{color:var(--text); border-bottom-color:rgba(216,180,122,.5)}
+  nav a[aria-current]{color:var(--accent)}
+  .navtoggle{display:none}
+  .burger{display:none; cursor:pointer; padding:8px; margin:-8px}
+  .burger span{display:block; width:20px; height:1.5px; background:var(--secondary); margin:4px 0}
+
+  .title{padding:64px 0 44px; border-bottom:1px solid var(--line)}
+  h1{font-size:34px; line-height:1.2; font-weight:600; letter-spacing:-.018em; margin:0 0 14px}
+  .dates{color:var(--muted); font-size:13.5px; margin:0}
+
+  main{padding:12px 0 0}
+  h2{font-size:19px; font-weight:600; letter-spacing:-.01em; margin:48px 0 14px}
+  h3{font-size:16px; font-weight:600; margin:32px 0 10px; color:var(--text)}
+  p{margin:0 0 18px; color:var(--secondary)}
+  ul{margin:0 0 18px; padding-left:22px; color:var(--secondary)}
+  li{margin-bottom:9px}
+  strong{color:var(--text); font-weight:600}
+
+  .callout{
+    background:var(--surface); border:1px solid var(--line); border-left:2px solid var(--accent);
+    border-radius:4px; padding:24px 26px; margin:34px 0;
+  }
+  .callout p{margin:0 0 14px; color:var(--text)}
+  .callout p:last-child{margin:0}
+
+  .flow{border:1px solid var(--line); border-radius:5px; padding:22px 24px; margin:0 0 18px}
+  .flow h3{margin:0 0 12px}
+  .flow p{margin:0 0 12px; font-size:15px}
+  .flow p:last-child{margin:0}
+  .flowmeta{
+    display:inline-block; font-size:9.5px; letter-spacing:.14em; text-transform:uppercase;
+    font-weight:600; color:var(--accent); border:1px solid rgba(216,180,122,.35);
+    padding:2px 8px; border-radius:3px; margin-bottom:12px;
+  }
+  .flowmeta.local{color:var(--muted); border-color:var(--line)}
+  .unverified{
+    border:1px dashed rgba(224,149,140,.5); background:rgba(224,149,140,.05);
+    border-radius:4px; padding:14px 16px; margin:0 0 14px;
+    font-size:13px; color:#e0958c;
+  }
+  .unverified strong{color:#e0958c}
+
+  footer{margin-top:72px; padding:34px 0 76px; border-top:1px solid var(--line); color:var(--muted); font-size:13.5px}
+  footer p{color:var(--muted); font-size:13.5px; margin:0 0 10px}
+
+  @media (max-width:640px){
+    h1{font-size:27px} .title{padding:48px 0 36px}
+    .site{padding-top:30px}
+    .burger{display:block}
+    nav{display:none; width:100%; flex-direction:column; align-items:flex-start; gap:0; margin-top:20px; border-top:1px solid var(--line)}
+    nav a{padding:15px 0; width:100%; border-bottom:1px solid var(--line); font-size:15px}
+    .navtoggle:checked ~ nav{display:flex}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="site">
+    <a class="wordmark" href="/">
+      <span class="rule"></span>
+      <span class="name">Barca Labs</span>
+    </a>
+    <input type="checkbox" id="navtoggle" class="navtoggle" aria-label="Open menu">
+    <label for="navtoggle" class="burger"><span></span><span></span><span></span></label>
+    <nav>
+      <a href="/sovereign-vault">Sovereign Vault</a>
+      <a href="/privacy" aria-current="page">Privacy</a>
+    </nav>
+  </header>
+
+  <div class="title">
+    <h1>Privacy Policy</h1>
+    <!-- EDIT ME: update both dates whenever the substance changes -->
+    <p class="dates">Effective 20 August 2026 · Last updated 20 August 2026</p>
+  </div>
+
+  <main>
+
+    <div class="callout">
+      <p><strong>The short version:</strong> Sovereign Vault stores your records on your phone. There
+      is no account, no server of ours, and no database we can look at. We do not collect your health
+      information, because the app contains no mechanism by which we could receive it.</p>
+      <p>The app is not silent on the network, and we would rather show you exactly what it does than
+      claim an absolute we cannot honestly claim. Every connection it makes is listed below, along
+      with what moves and why.</p>
+    </div>
+
+    <h2>Who we are</h2>
+    <p><strong>Barca Labs, LLC</strong>, a limited liability company registered in the State of Kansas,
+    United States. Barca Labs, LLC is the developer and publisher of the mobile application
+    <strong>Sovereign Vault</strong> ("the app").</p>
+    <p>For any question about this policy or about your data, contact
+    <a href="mailto:privacy@barcalabs.com">privacy@barcalabs.com</a>.</p>
+
+    <h2>What the app stores, and where</h2>
+    <p>Sovereign Vault records the information you enter: compounds and doses, schedules, adherence
+    history, lab biomarkers, body measurements, blood pressure, training sessions, cycle information,
+    and any readings pulled from a wearable you connect.</p>
+    <p>All of it is written to an encrypted database on your device. None of it is transmitted to us.
+    We operate no server that receives it, and there is no account under which it could be stored.</p>
+
+    <h3>How the encryption works</h3>
+    <p>The key that opens the database is derived from the PIN you set, and is not stored anywhere in
+    a form that can be used without it. Biometric unlock, if you enable it, is a faster route to the
+    same key rather than a second way in. Supporting key material is held in your device's secure
+    hardware store — the Keychain on iOS, the Keystore on Android. The key never leaves your phone.</p>
+    <p><strong>We have no copy of any of it.</strong> If you lose your phone we cannot recover your
+    records, and if you forget your PIN we cannot reset it. That is a direct consequence of the
+    design rather than an oversight, and you should plan your own backups accordingly.</p>
+    <p>The full specifics — cipher, key derivation, iteration count — are on the
+    <a href="/security">security page</a>. Being straight with you about what this does and does
+    not protect against:</p>
+    <ul>
+      <li><strong>Device backups differ by platform.</strong> On Android, the supporting key material
+      is excluded from cloud backups and device-to-device transfers. <strong>On iOS it is not</strong>
+      — it is included in encrypted iCloud and computer backups and can be restored to a new device.
+      Worth knowing before you rely on the app rather than after.</li>
+      <li><strong>An unlocked device in someone else's hands.</strong> If a person has your phone and
+      your PIN or biometric, the app will show them your records exactly as it shows you.</li>
+      <li><strong>A jailbroken or rooted device.</strong> The operating system's secure storage can
+      potentially be defeated where OS protections have been removed.</li>
+    </ul>
+
+    <h2>What we collect</h2>
+    <p><strong>Nothing.</strong> The app has no user accounts and no sign-in. It does not report usage,
+    does not phone home, and contains no advertising or analytics software. We do not know who you
+    are, that you installed the app, or whether you still use it.</p>
+
+    <h2>Connections the app makes</h2>
+    <p>Below is every connection Sovereign Vault makes, what it carries, and what it is for.</p>
+
+    <div class="flow">
+      <span class="flowmeta">Automatic · every launch · Expo</span>
+      <h3>App updates</h3>
+      <p>Sovereign Vault delivers updates over the air using <strong>EAS Update</strong>, a service
+      operated by Expo. Each time the app starts, it contacts Expo's servers to ask whether a newer
+      version is available. If one is, the app then <strong>downloads</strong> the updated application
+      code and any changed assets from Expo's content delivery network.</p>
+      <p>According to Expo's documented update protocol, the request identifies the platform, the
+      runtime version, and the release channel, so the service knows whether a newer version applies.
+      As with any internet request, Expo's servers can also observe the IP address it came from.
+      <strong>No health information, and nothing you have entered, is sent in this request or in any
+      part of the update process.</strong></p>
+      <p>This happens automatically on every launch and requires no action from you. Expo's handling
+      is governed by <a href="https://expo.dev/privacy" rel="noopener">Expo's privacy policy</a>.</p>
+    </div>
+
+    <div class="flow">
+      <span class="flowmeta">Optional · only if you connect it · Polar</span>
+      <h3>Polar sync</h3>
+      <p>If you choose to connect a Polar account, the app signs in to <strong>Polar's servers</strong>
+      on your behalf and requests your readings from them. This is a connection to a third party's
+      servers over the internet — it is not a local read from your device.</p>
+      <p>It happens only if you set it up, and only when a sync runs. You can disconnect at any time.
+      Data retrieved from Polar is then stored on your device like any other entry.</p>
+      <p>The connection runs <strong>directly between your device and Polar</strong>. There is no
+      server of ours in the middle, and your Polar data does not pass through us at any point. Your
+      relationship with Polar is governed by
+      <a href="https://www.polar.com/en/legal/privacy-notice" rel="noopener">Polar's privacy notice</a>.</p>
+    </div>
+
+    <div class="flow">
+      <span class="flowmeta">At purchase · Apple / Google</span>
+      <h3>Buying the app</h3>
+      <p>Sovereign Vault is sold as a one-time purchase through the Apple App Store and the Google Play
+      Store. Payment is handled entirely by Apple and Google. <strong>We never see your payment
+      details.</strong></p>
+      <p>Apple and Google collect their own information when you buy or download an app, and provide
+      us with aggregate, anonymised sales statistics that cannot identify you individually. Their
+      handling is governed by
+      <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's privacy policy</a> and
+      <a href="https://policies.google.com/privacy" rel="noopener">Google's privacy policy</a>.</p>
+    </div>
+
+    <h2>On your device only</h2>
+
+    <div class="flow">
+      <span class="flowmeta local">Local · no network · no third party</span>
+      <h3>Apple Health and Health Connect</h3>
+      <p>Where the app reads from Apple HealthKit (iOS) or Health Connect (Android), that is a
+      <strong>local read on your own device</strong>, mediated by your operating system and limited to
+      the data types you approve. Nothing is transmitted over the network and no third party receives
+      it. You can withdraw these permissions at any time in your device's system settings.</p>
+    </div>
+
+    <h2>Taking your data out</h2>
+
+    <div class="flow">
+      <span class="flowmeta">You start it · clipboard only</span>
+      <h3>Export</h3>
+      <p>The app can produce a summary of your record — as JSON or as Markdown — so you can take it
+      elsewhere: to your own notes, to a clinician, or to an AI tool you want to ask questions of.</p>
+      <p><strong>That summary is copied to your device's clipboard, and that is the only thing that
+      happens.</strong> No file is written to your device. Nothing is shared through your device's
+      share sheet. The app does not transmit it anywhere. It is placed on your clipboard and left
+      there for you to paste.</p>
+      <p>What you paste it into is a separate and deliberate act you perform.</p>
+      <p>Worth being clear about the consequence: once you paste or share an export into another
+      application — an AI assistant, an email, a cloud drive — that copy is governed by
+      <strong>that service's</strong> policies, not by this one, and it is outside our reach entirely.
+      Nothing we do can protect a copy you have handed to someone else. That is the trade for being
+      able to take your data anywhere you want it.</p>
+    </div>
+
+    
+    <h2>Diagnostics and analytics</h2>
+    <p>Sovereign Vault contains <strong>no analytics software, no advertising software, no crash
+    reporting service, and no third-party tracking of any kind.</strong> Beyond the connections
+    described above, the app makes no network requests.</p>
+    <p>Your device's operating system and the app store you installed from may collect their own
+    diagnostic information, independently of the app. That collection is controlled by Apple's and
+    Google's settings and policies, and by the choices you have made in your device settings.</p>
+
+    <h2>Deleting your data</h2>
+    <p>The app includes an erase function that removes your records from the device. Uninstalling the
+    app also removes its database.</p>
+    <p>Because we never hold a copy, <strong>there is nothing for you to ask us to delete</strong>, and
+    no request process to go through. When it is gone from your phone, it is gone.</p>
+
+    <h2>Your rights</h2>
+    <p>Privacy law generally gives you rights to access, correct, export or delete the personal
+    information a company holds about you. We hold none — no account, no profile, no copy of your
+    records — so there is nothing for us to disclose or erase.</p>
+    <p>The third parties described above hold whatever they hold under their own policies. To exercise
+    rights against Expo or Polar, contact them directly using the links in those sections.</p>
+    <p>If you believe we hold information about you and wish to exercise a right in relation to it,
+    write to <a href="mailto:privacy@barcalabs.com">privacy@barcalabs.com</a> and we will respond.</p>
+
+    <h2>Children</h2>
+    <p>Sovereign Vault is intended for adults and is not directed to anyone under 18. We do not
+    knowingly collect personal information from children, which in this case follows from not
+    collecting personal information from anyone.</p>
+
+    <h2>Not medical software</h2>
+    <p>Sovereign Vault records information you choose to record. <strong>It is not a medical device
+    and is not intended to diagnose, treat, cure, or prevent any disease.</strong> Nothing in the app
+    is medical advice, and no output of the app should be read as a clinical finding.</p>
+    <p>Decisions about your health belong between you and a qualified clinician.</p>
+
+    <h2>This website</h2>
+    <p>This website is a set of static pages. It sets no cookies, runs no analytics, embeds no
+    third-party scripts, and loads no external fonts or trackers. Our hosting provider processes
+    standard server request data, including IP address, in order to deliver the page to you.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>If this policy changes, the effective date at the top of this page changes with it. If a change
+    ever affected how your data is handled in a way that mattered, it would be announced in the app
+    rather than quietly posted here.</p>
+    <p>If a future version of the app adds a connection not listed above, or begins collecting
+    information we do not collect today, we will describe it here before it takes effect.</p>
+
+    <h2>Contact</h2>
+    <p>Barca Labs, LLC<br>
+    Kansas, United States<br>
+    <a href="mailto:privacy@barcalabs.com">privacy@barcalabs.com</a></p>
+
+  </main>
+
+  <footer>
+    <p><a href="/">Barca Labs</a></p>
+    <p>© 2026 Barca Labs, LLC. All rights reserved.</p>
+  </footer>
+
+</div>
+</body>
+</html>
