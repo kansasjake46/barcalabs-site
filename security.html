@@ -82,6 +82,7 @@
     <nav>
       <a href="/sovereign-vault">Sovereign Vault</a>
       <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
     </nav>
   </header>
 
@@ -121,7 +122,8 @@
   <p>The key is derived on your device and never leaves it. We hold no copy of it and no copy of
   your data. <strong>If you forget your PIN, we cannot reset it, and your records cannot be
   recovered.</strong> That follows from the design rather than being an oversight — plan your own
-  backups accordingly.</p>
+  backups accordingly. There is a second reason to keep your own copy, and it is not about
+  encryption: see <a href="#defect">the defect described below</a>.</p>
 
   <div class="callout">
     <p>Biometric unlock is a faster route to the same key, not a second way in. If someone has your
@@ -129,16 +131,42 @@
     ciphertext.</p>
   </div>
 
+  <h2 id="defect">A defect we have not fixed</h2>
+  <p>Sovereign Vault stores your records in <strong>SQLite</strong>, the database engine underneath
+  most of the apps on your phone. SQLite has a flaw in the way it writes to disk. It has been there
+  since 2010 and was corrected upstream in March 2026 — subtle enough to go unnoticed for sixteen
+  years. <strong>The library we build on has not picked up that correction, and there is no version
+  we can ship today that has it.</strong></p>
+  <p>It can cause a recently saved entry to be lost. Silently — no error, no warning, it is simply
+  not there.</p>
+  <p>How often depends on how an app uses the database, and <strong>we are still working out how
+  much our own use increases the risk.</strong> We would rather tell you that than give you a number
+  we cannot stand behind.</p>
+  <p><strong>Most apps carrying this same defect keep a copy of your data on their servers, so a
+  lost write is recoverable there. We do not, by design.</strong> The defect is ordinary. The
+  consequence here is not — and that is the honest cost of an app with no server, stated plainly
+  rather than left for you to discover.</p>
+  <p>What it means for you: <strong>copy your record out from time to time and keep it somewhere.</strong>
+  That is the only protection available today, and it is the reason the export exists. We will change
+  this section when the fix reaches us.</p>
+
   <h2>What this does not protect against</h2>
   <p>Encryption at rest solves one problem well and several others not at all. Rather than let the
   phrase imply more than it delivers:</p>
   <ul>
-    <li><strong>Device backups, and the two platforms differ.</strong> On <strong>Android</strong>,
-    the supporting key material is excluded from cloud backups and device-to-device transfers. On
-    <strong>iOS it is not</strong> — the default Keychain accessibility class carries into an
-    encrypted iCloud or computer backup and can be restored to a new device. It is excluded only
-    from <em>unencrypted</em> local backups. If your threat model includes someone with access to
-    your encrypted backups, that is a real difference and you should know about it.</li>
+    <li><strong>Device backups — there are two different things in play.</strong> The
+    <strong>key material in your device's secure storage</strong> (the Keychain on iOS, the Keystore
+    on Android) behaves one way: on iOS it carries into an encrypted iCloud or computer backup and
+    can be restored to a new device; on Android it is excluded from cloud backups and device
+    transfers. On both platforms it stays out of <em>unencrypted</em> local backups.</li>
+    <li><strong>The recovery file is different, and that one is our choice rather than the
+    platform's.</strong> If you set up a recovery code, the app writes a small file that your code
+    unlocks. It is an ordinary file in the app's storage, so it <strong>is included in device
+    backups on both platforms</strong>. We did not exclude it and we could have — because a recovery
+    code that cannot travel to a new phone would only ever work on the device that never needed it.
+    <strong>The cost of that is real and you should weigh it:</strong> someone holding both your
+    backup and your recovery code could open your vault. Keep the code somewhere your backups do
+    not reach.</li>
     <li><strong>An unlocked device in someone else's hands.</strong> With your phone and your PIN or
     biometric, the app shows them your records exactly as it shows you. No encryption scheme helps
     here.</li>
@@ -165,7 +193,7 @@
   data anywhere you want it.</p>
 
   <footer>
-    <p><a href="/sovereign-vault">Sovereign Vault</a> · <a href="/privacy">Privacy policy</a> ·
+    <p><a href="/sovereign-vault">Sovereign Vault</a> · <a href="/privacy">Privacy policy</a> · <a href="/terms">Terms</a> · <a href="/support">Support</a> ·
     <a href="/">Barca Labs</a></p>
     <p>© 2026 Barca Labs, LLC</p>
   </footer>

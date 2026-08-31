@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of Service — Barca Labs</title>
+<meta name="description" content="Terms of service for Sovereign Vault, a product of Barca Labs, LLC. What the app is, what it is not, and the terms on which it is licensed to you.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230a0b0d'/><g stroke='%23d8b47a' stroke-width='9' fill='none'><path d='M37 11 L53 27'/><path d='M53 37 L37 53'/><path d='M27 53 L11 37'/><path d='M11 27 L27 11'/></g></svg>">
+
+<style>
+  :root{
+    --ink:#0a0b0d; --surface:#14161a; --line:#22262c;
+    --muted:#828994; --secondary:#b6bcc4; --text:#f2efe9; --accent:#d8b47a;
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--ink); color:var(--text);
+    font-family:var(--sans); font-size:16px; line-height:1.68;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:680px; margin:0 auto; padding:0 28px}
+  a{color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(216,180,122,.3)}
+  a:hover{border-bottom-color:var(--accent)}
+
+  .site{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; padding:38px 0 0}
+  .wordmark{display:inline-flex; flex-direction:column; align-items:flex-start; gap:10px; border-bottom:none}
+  .wordmark .rule{width:40px; height:1px; background:var(--accent)}
+  .wordmark .name{font-size:14px; font-weight:500; letter-spacing:.19em; text-transform:uppercase; color:var(--text)}
+  nav{display:flex; gap:26px; align-items:center}
+  nav a{font-size:13.5px; color:var(--secondary); border-bottom:1px solid transparent}
+  nav a:hover{color:var(--text); border-bottom-color:rgba(216,180,122,.5)}
+  nav a[aria-current]{color:var(--accent)}
+  .navtoggle{display:none}
+  .burger{display:none; cursor:pointer; padding:8px; margin:-8px}
+  .burger span{display:block; width:20px; height:1.5px; background:var(--secondary); margin:4px 0}
+
+  .title{padding:64px 0 44px; border-bottom:1px solid var(--line)}
+  h1{font-size:34px; line-height:1.2; font-weight:600; letter-spacing:-.018em; margin:0 0 14px}
+  .dates{color:var(--muted); font-size:13.5px; margin:0}
+
+  main{padding:12px 0 0}
+  h2{font-size:19px; font-weight:600; letter-spacing:-.01em; margin:48px 0 14px}
+  h3{font-size:16px; font-weight:600; margin:32px 0 10px; color:var(--text)}
+  p{margin:0 0 18px; color:var(--secondary)}
+  ul{margin:0 0 18px; padding-left:22px; color:var(--secondary)}
+  li{margin-bottom:9px}
+  strong{color:var(--text); font-weight:600}
+
+  .callout{
+    background:var(--surface); border:1px solid var(--line); border-left:2px solid var(--accent);
+    border-radius:4px; padding:24px 26px; margin:34px 0;
+  }
+  .callout p{margin:0 0 14px; color:var(--text)}
+  .callout p:last-child{margin:0}
+
+  .notice{
+    background:var(--surface); border:1px solid var(--line); border-left:2px solid #e0958c;
+    border-radius:4px; padding:22px 24px; margin:26px 0;
+  }
+  .notice p{margin:0 0 14px; color:var(--text)}
+  .notice p:last-child{margin:0}
+  .caps{
+    font-size:14.5px; letter-spacing:.005em; font-weight:600; color:var(--text);
+    text-transform:uppercase; line-height:1.6;
+  }
+
+  footer{margin-top:72px; padding:34px 0 76px; border-top:1px solid var(--line); color:var(--muted); font-size:13.5px}
+  footer p{color:var(--muted); font-size:13.5px; margin:0 0 10px}
+
+  @media (max-width:640px){
+    h1{font-size:27px} .title{padding:48px 0 36px}
+    .site{padding-top:30px}
+    .burger{display:block}
+    nav{display:none; width:100%; flex-direction:column; align-items:flex-start; gap:0; margin-top:20px; border-top:1px solid var(--line)}
+    nav a{padding:15px 0; width:100%; border-bottom:1px solid var(--line); font-size:15px}
+    .navtoggle:checked ~ nav{display:flex}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="site">
+    <a class="wordmark" href="/">
+      <span class="rule"></span>
+      <span class="name">Barca Labs</span>
+    </a>
+    <input type="checkbox" id="navtoggle" class="navtoggle" aria-label="Open menu">
+    <label for="navtoggle" class="burger"><span></span><span></span><span></span></label>
+    <nav>
+      <a href="/sovereign-vault">Sovereign Vault</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms" aria-current="page">Terms</a>
+    </nav>
+  </header>
+
+  <div class="title">
+    <h1>Terms of Service</h1>
+    <p class="dates">Effective 30 August 2026 · Last updated 30 August 2026</p>
+  </div>
+
+  <main>
+
+    <div class="callout">
+      <p><strong>The short version:</strong> Sovereign Vault is a notebook, not a doctor. It records
+      what you tell it and shows it back to you. It does not advise you, check anything, or know
+      whether what you are doing is safe or legal — those remain entirely yours to judge.</p>
+      <p>We hold no copy of your records and no copy of your key, so if you lose them we cannot get
+      them back. And because you paid us once for a piece of software, what you can recover from us
+      if something goes wrong is limited to what you paid.</p>
+      <p>The rest of this page says all of that properly.</p>
+    </div>
+
+    <h2>1. This agreement</h2>
+    <p>These Terms of Service ("Terms") are a binding agreement between you and <strong>Barca Labs,
+    LLC</strong>, a limited liability company registered in the State of Kansas, United States
+    ("Barca Labs", "we", "us"), covering your use of the mobile application <strong>Sovereign
+    Vault</strong> and the website at barcalabs.com (together, "the Service").</p>
+    <p>By downloading, installing or using the app, you accept these Terms. If you do not accept
+    them, do not install or use the app.</p>
+    <p>How we handle information is described separately in our
+    <a href="/privacy">privacy policy</a>, which forms part of these Terms.</p>
+
+    <h2>2. Who may use it</h2>
+    <p>You must be <strong>at least 18 years old</strong> to use Sovereign Vault. The app is intended
+    for adults tracking their own health information, and it is not designed, marketed or made
+    available for use by minors.</p>
+    <p>You must also be legally able to enter into this agreement, and not barred from doing so under
+    the laws that apply to you.</p>
+
+    <h2>3. What the app is, and what it is not</h2>
+    <p>Sovereign Vault is a <strong>record-keeping tool</strong>. It stores what you enter, organises
+    it, and shows it back to you.</p>
+    <p>It can also <strong>prepare your record to be handed to someone else</strong> — a clinician,
+    or an AI tool you choose to ask — by attaching context describing what the data is, where it
+    came from, and how it should be read. That context is about the data. It does not contain an
+    assessment, a conclusion, or an opinion about your health, and it is not sent anywhere: it is
+    placed on your clipboard with your record, for you to paste.</p>
+    <p>It does not diagnose. It does not treat. It does not advise. It does not calculate or
+    recommend a dose, flag a risk, interpret a lab result, or tell you what any of your data means.
+    Where it displays a number, that number is one you entered or one your own device supplied.</p>
+
+    <div class="notice">
+      <p class="caps">Sovereign Vault is not a medical device and does not provide medical advice,
+      diagnosis or treatment. It is not a substitute for consultation with a qualified healthcare
+      professional.</p>
+      <p class="caps">Do not start, stop, or change any medication, compound, dose or protocol on
+      the basis of anything this app displays. Seek the advice of a physician or other qualified
+      provider with any question you have regarding a medical condition or treatment.</p>
+      <p class="caps">If you think you may have a medical emergency, call your doctor or emergency
+      services immediately.</p>
+    </div>
+
+    <p>Nothing in the app, on this website, or in any communication from us constitutes medical,
+    clinical, pharmacological, nutritional or legal advice.</p>
+
+    <h2>4. What you record, and what you do</h2>
+    <p>Many substances people track in an app like this are prescription medications. Some are
+    controlled substances. Some are lawful to possess only with a valid prescription, and some are
+    not lawful to possess at all in some places.</p>
+    <p><strong>The app does not check any of this.</strong> It does not know what you have entered,
+    whether you hold a prescription for it, where you are, or whether any of it is lawful there.
+    Recording something in the app is not permission to obtain it, possess it, or use it, and it is
+    not evidence that doing so is safe or legal.</p>
+
+    <div class="notice">
+      <p class="caps">You are solely responsible for what you obtain, possess and use, and for
+      complying with every law that applies to you. Barca Labs does not supply, source, prescribe,
+      recommend or endorse any substance, protocol or course of action.</p>
+    </div>
+
+    <p>You are also responsible for the accuracy of what you record. The app repeats what you gave
+    it; it cannot detect a mistake in it.</p>
+
+    <h2>5. Your data, and why we cannot recover it</h2>
+    <p>Sovereign Vault stores your records in an encrypted database on your own device. There is no
+    account, no server of ours, and no backup or sync service. We hold no copy of your records and
+    no copy of the key that opens them.</p>
+    <p>That design has a consequence you should understand before you rely on the app:</p>
+    <ul>
+      <li><strong>If you forget your PIN, your records cannot be recovered</strong> — not by you and
+      not by us. We cannot reset it, bypass it, or read the database without it.</li>
+      <li><strong>If you delete the app, lose your device, or your device fails or is wiped</strong>,
+      your records are gone unless you have made your own arrangements to preserve them.</li>
+      <li><strong>Device backups behave differently on iOS and Android</strong>, as described in the
+      <a href="/privacy">privacy policy</a> and on the <a href="/security">security page</a>.</li>
+    </ul>
+    <p><strong>Keeping your own backup is your responsibility.</strong> The export function exists so
+    that you can.</p>
+    <p>Beyond the design consequences above, the database engine the app is built on carries a known
+    defect that can cause a recently saved entry to be lost. No corrected version is available to us
+    at present. It is described in full on our <a href="/security">security page</a>, and it is a
+    further reason to keep your own copy of anything you would not want to lose.</p>
+
+    <div class="notice">
+      <p class="caps">To the fullest extent permitted by law, Barca Labs is not liable for any loss,
+      corruption or inaccessibility of your data, however caused, including where it results from a
+      forgotten PIN, a lost or damaged device, an operating system change, or your own deletion of
+      the app.</p>
+    </div>
+
+    <h2>6. Exports</h2>
+    <p>The app can copy a summary of your record to your device's clipboard. That summary reflects
+    what you entered — no more and no less. Its usefulness and its accuracy depend entirely on the
+    accuracy and completeness of your own records.</p>
+    <p><strong>Check an export before you rely on it, and check it before you give it to anyone
+    else</strong>, including a clinician or an AI tool. Once you paste it somewhere, that copy is
+    governed by whatever you pasted it into and is outside our control entirely.</p>
+    <p>Where you paste your record into an AI tool, <strong>anything that tool tells you comes from
+    that tool and not from us</strong>. We do not see the question you asked or the answer you were
+    given, we do not review it, and we do not verify, endorse or take responsibility for it. The
+    context the app attaches to your record describes that record; it does not assess it, and it is
+    not an opinion about your health. Treat what any such tool tells you the way you would treat
+    anything else you read on the internet about your own health.</p>
+
+    <h2>7. Your licence</h2>
+    <p>Sovereign Vault is licensed to you, not sold. Subject to these Terms, Barca Labs grants you a
+    personal, non-exclusive, non-transferable, revocable licence to install and use one copy of the
+    app on devices you own or control, for your own personal and non-commercial use.</p>
+    <p>You may not: copy, modify, translate or create derivative works of the app; reverse engineer,
+    decompile or disassemble it except to the extent that restriction is unenforceable under
+    applicable law; rent, lease, lend, sell, sublicense or redistribute it; remove or obscure any
+    proprietary notice; or use it to build a competing product.</p>
+    <p>All rights not expressly granted are reserved. Barca Labs retains all right, title and
+    interest in the app, including all intellectual property in it. <strong>You retain all rights in
+    the data you enter.</strong> We acquire no interest in it, because we never receive it.</p>
+
+    <h2>8. Purchase, and the platform you bought from</h2>
+    <p>Sovereign Vault is sold as a <strong>one-time purchase</strong> through the Apple App Store and
+    the Google Play Store. Those stores are the sellers of record and handle payment and billing.
+    <strong>We never see your payment details.</strong></p>
+    <p><strong>Refunds work differently on each store, and it is worth knowing which one you bought
+    from.</strong></p>
+    <ul>
+      <li><strong>Apple App Store.</strong> Apple handles refunds entirely. We cannot issue one, and
+      a request has to go to Apple through
+      <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>.</li>
+      <li><strong>Google Play.</strong> Google handles most refunds, and we are also able to issue
+      one directly. If there is a problem with your purchase, write to
+      <a href="mailto:support@barcalabs.com">support@barcalabs.com</a> and we will look at it.</li>
+    </ul>
+    <p>Prices may change for future purchasers. A change in price does not entitle you to a refund or
+    a payment, and does not affect a licence you have already bought.</p>
+
+    <h2>9. Updates and changes to the app</h2>
+    <p>We may issue updates that add, change or remove features. Some updates are delivered over the
+    air and apply automatically the next time you open the app.</p>
+    <p>We do not promise that any particular feature will continue to exist, and we may discontinue
+    the app entirely. If we discontinue it, the copy already installed on your device will keep
+    working for as long as your operating system supports it, because it needs nothing from us to
+    run.</p>
+
+    <h2>10. Third-party services</h2>
+    <p>The app can connect to services operated by others — for example Polar, if you choose to link
+    a Polar account, and Apple Health or Health Connect on your own device. Update delivery uses a
+    service operated by Expo.</p>
+    <p>Those services are governed by their own terms and privacy policies. <strong>We do not control
+    them and are not responsible for them</strong>, for their availability, or for what they do with
+    information you give them directly. Each is described in the <a href="/privacy">privacy
+    policy</a>.</p>
+
+    <h2>11. Acceptable use</h2>
+    <p>You agree not to use the Service to break the law, to infringe anyone's rights, to interfere
+    with or attempt to compromise the app or the website, or to record another person's health
+    information without their knowledge.</p>
+
+    <h2>12. No warranty</h2>
+    <div class="notice">
+      <p class="caps">The service is provided "as is" and "as available", without warranty of any
+      kind, whether express, implied or statutory.</p>
+      <p class="caps">To the fullest extent permitted by law, Barca Labs disclaims all warranties,
+      including any implied warranty of merchantability, fitness for a particular purpose, title,
+      accuracy, and non-infringement.</p>
+      <p class="caps">We do not warrant that the app will be uninterrupted, timely, secure or
+      error-free, that any defect will be corrected, or that the app will meet your requirements or
+      produce accurate or reliable results.</p>
+    </div>
+    <p>Some jurisdictions do not allow the exclusion of certain warranties, so some of the above may
+    not apply to you. In that case those exclusions apply to the fullest extent the law allows.</p>
+
+    <h2>13. Limitation of liability</h2>
+    <div class="notice">
+      <p class="caps">To the fullest extent permitted by law, Barca Labs and its members, officers
+      and agents shall not be liable for any indirect, incidental, special, consequential, punitive
+      or exemplary damages, or for any loss of profits, revenue, data, goodwill, or other intangible
+      losses, arising out of or relating to your use of or inability to use the service — whether
+      based in contract, tort, negligence, strict liability or otherwise, and whether or not we were
+      advised of the possibility.</p>
+      <p class="caps">Barca Labs' total aggregate liability for all claims relating to the service
+      shall not exceed the greater of the amount you actually paid for the app in the twelve months
+      preceding the claim, or twenty-five United States dollars.</p>
+    </div>
+    <p>Some jurisdictions do not allow the exclusion or limitation of certain damages, so some of the
+    above may not apply to you. Nothing in these Terms excludes liability that cannot lawfully be
+    excluded — including liability for death or personal injury caused by negligence, or for fraud.</p>
+
+    <h2>14. Indemnity</h2>
+    <p>You agree to indemnify and hold harmless Barca Labs, LLC and its members, officers and agents
+    from any claim, demand, loss, liability or expense (including reasonable legal fees) arising from
+    your use of the Service, from your breach of these Terms, from anything you obtain, possess or
+    use, or from any decision you make in reliance on information you recorded in the app.</p>
+
+    <h2>15. Termination</h2>
+    <p>These Terms apply for as long as you use the app. You may end them at any time by deleting the
+    app. We may terminate your licence if you materially breach these Terms.</p>
+    <p>Sections 3, 4, 5, 12, 13, 14, 16 and 17 survive termination.</p>
+
+    <h2>16. Governing law and disputes</h2>
+    <p>These Terms are governed by the laws of the <strong>State of Kansas</strong>, United States,
+    without regard to its conflict-of-laws rules.</p>
+    <p><strong>Talk to us first.</strong> If you have a dispute with us, contact
+    <a href="mailto:support@barcalabs.com">support@barcalabs.com</a> and give us
+    <strong>60 days</strong> to resolve it informally. Most things can be sorted out this way, and it
+    costs neither of us anything.</p>
+    <p>If it cannot be resolved, you and Barca Labs agree that any action shall be brought
+    exclusively in the state or federal courts located in the State of Kansas, and both of us consent
+    to the jurisdiction of those courts. This does not prevent either of us from bringing an
+    individual claim in a small claims court.</p>
+
+    <h2>17. Apple and Google</h2>
+    <p>Where you obtained the app from the Apple App Store, the following applies and Apple's own
+    terms also govern your use:</p>
+    <ul>
+      <li>These Terms are between you and <strong>Barca Labs, LLC only</strong>, not with Apple.
+      Apple is not responsible for the app or its content.</li>
+      <li>Apple has <strong>no obligation to provide any maintenance or support</strong> for the
+      app.</li>
+      <li>If the app fails to conform to any applicable warranty, you may notify Apple, and Apple
+      may refund the purchase price. To the maximum extent permitted by law, Apple has no other
+      warranty obligation whatsoever with respect to the app.</li>
+      <li>Apple is not responsible for addressing any claim by you or a third party relating to the
+      app, including product liability claims, any claim that the app fails to conform to a legal or
+      regulatory requirement, and claims arising under consumer protection or similar legislation.</li>
+      <li>Apple is not responsible for the investigation, defence, settlement or discharge of any
+      third-party claim that the app infringes intellectual property rights.</li>
+      <li>You represent that you are not located in a country subject to a United States Government
+      embargo or designated as a "terrorist supporting" country, and that you are not on any United
+      States Government list of prohibited or restricted parties.</li>
+      <li><strong>Apple and its subsidiaries are third-party beneficiaries of these Terms</strong>
+      and, upon your acceptance, have the right to enforce them against you.</li>
+    </ul>
+    <p>Where you obtained the app from Google Play, Google's own terms also govern your use, and
+    these Terms are between you and Barca Labs, LLC only.</p>
+
+    <h2>18. Changes to these Terms</h2>
+    <p>We may update these Terms. When we do, we will change the date at the top of this page, and
+    where a change is material we will make a reasonable effort to bring it to your attention in the
+    app.</p>
+    <p>Continuing to use the app after a change takes effect means you accept the updated Terms. If
+    you do not accept them, stop using the app and delete it.</p>
+
+    <h2>19. General</h2>
+    <p>If any provision of these Terms is held unenforceable, it will be modified to the minimum
+    extent necessary and the remaining provisions stay in force. Our failure to enforce a provision
+    is not a waiver of it. You may not assign these Terms; we may assign them in connection with a
+    merger, acquisition or sale of assets.</p>
+    <p>These Terms, together with the <a href="/privacy">privacy policy</a>, are the entire agreement
+    between you and Barca Labs regarding the Service.</p>
+
+    <h2>20. Contact</h2>
+    <p><strong>Barca Labs, LLC</strong><br>
+    State of Kansas, United States<br>
+    <a href="mailto:support@barcalabs.com">support@barcalabs.com</a></p>
+
+  </main>
+
+  <footer>
+    <p><a href="/sovereign-vault">Sovereign Vault</a> · <a href="/privacy">Privacy policy</a> ·
+    <a href="/security">Security</a> · <a href="/support">Support</a> · <a href="/">Barca Labs</a></p>
+    <p>© 2026 Barca Labs, LLC</p>
+  </footer>
+
+</div>
+</body>
+</html>

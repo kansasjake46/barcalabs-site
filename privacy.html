@@ -98,13 +98,13 @@
     <nav>
       <a href="/sovereign-vault">Sovereign Vault</a>
       <a href="/privacy" aria-current="page">Privacy</a>
+      <a href="/terms">Terms</a>
     </nav>
   </header>
 
   <div class="title">
     <h1>Privacy Policy</h1>
-    <!-- EDIT ME: update both dates whenever the substance changes -->
-    <p class="dates">Effective 20 August 2026 · Last updated 20 August 2026</p>
+    <p class="dates">Effective 30 August 2026 · Last updated 30 August 2026</p>
   </div>
 
   <main>
@@ -126,11 +126,78 @@
     <a href="mailto:privacy@barcalabs.com">privacy@barcalabs.com</a>.</p>
 
     <h2>What the app stores, and where</h2>
-    <p>Sovereign Vault records the information you enter: compounds and doses, schedules, adherence
-    history, lab biomarkers, body measurements, blood pressure, training sessions, cycle information,
-    and any readings pulled from a wearable you connect.</p>
+    <p>Sovereign Vault holds three kinds of information: <strong>what you enter yourself</strong>,
+    <strong>what it reads from services you connect it to</strong>, and <strong>a small amount the
+    app records about its own workings</strong>. Nothing else. The complete list:</p>
+    <ul>
+      <li><strong>A first name</strong>, if you give one, so the app can address you. Nothing else
+      identifies you — there is no account, no email address, no phone number.</li>
+      <li><strong>What you take</strong>, with doses, units, route, timing and schedule. This may
+      include prescription medication.</li>
+      <li><strong>How your protocol has changed over time</strong> — what you were taking before,
+      and when it changed.</li>
+      <li><strong>Whether you took each dose</strong>, skipped it, or took it late, together with
+      any note you write against it.</li>
+      <li><strong>Training</strong> — what you planned, and what you completed.</li>
+      <li><strong>Lab results</strong> you enter from blood work.</li>
+      <li><strong>Body weight and blood pressure</strong>, over time.</li>
+      <li><strong>Readings the app did not get from you</strong> — heart rate variability, resting
+      heart rate, sleep duration and sleep score, steps, and — where a connected service supplies
+      them — measures like strain and VO2 max. These come
+      from Apple Health, Health Connect, or a wearable you connect. Worth knowing that Apple Health
+      and Health Connect are <em>stores</em> rather than devices: what the app reads from them may
+      have been written by a scale, a watch, or another app entirely, not only by something you
+      think of as a wearable.</li>
+      <li><strong>Menstrual cycle entries</strong>, which may be your own or a partner's — see
+      below.</li>
+      <li><strong>Abstinence counters</strong> — see below.</li>
+      <li><strong>Which check-in cards you have been shown</strong>, when you dismissed or answered
+      them, and what you answered — including anything you typed into a free-text box. See below.</li>
+      <li><strong>A small technical error log.</strong> When something inside the app goes wrong, it
+      records the type of the error and a short description we wrote ourselves. It deliberately does
+      <strong>not</strong> record the error's own message, because those routinely contain the exact
+      value that caused the failure — which would put your data in a log. It never leaves your
+      device and it is encrypted with everything else.</li>
+    </ul>
     <p>All of it is written to an encrypted database on your device. None of it is transmitted to us.
     We operate no server that receives it, and there is no account under which it could be stored.</p>
+    <p>A small number of things sit outside that database, in your device's own secure storage — the
+    Keychain on iOS, keystore-backed encrypted storage on Android. Those are the cryptographic keys
+    themselves, plus a handful of flags and timestamps: whether you have turned on biometric unlock,
+    whether the vault has been set up, when a prompt was last shown to you. <strong>No health
+    information is among them, and nothing the app stores is stored unencrypted.</strong></p>
+
+    <h3>Cycle tracking</h3>
+    <p>The app can track a menstrual cycle and place it on the same timeline as your sleep, training
+    and adherence — so that a week which felt different has something around it to explain why. The
+    cycle may be your own or a partner's, and the two are handled differently.</p>
+    <p><strong>Your own cycle</strong> is recorded and stored like any other entry, and it is
+    included in anything you export.</p>
+    <p><strong>A partner's cycle</strong> means you are recording health information about someone
+    other than yourself. The app deliberately holds as little as it can:</p>
+    <ul>
+      <li><strong>What is stored:</strong> one date — the start of their last period — and two
+      numbers, their average cycle length and average period duration, along with any cycle event
+      you log yourself. <strong>There is no stored day-by-day record.</strong> Anything resembling a
+      calendar is worked out when it is needed and not kept.</li>
+      <li><strong>What is exported:</strong> nothing. Not the dates, not the entries, not the fact
+      that you are tracking a partner's cycle at all. <strong>An export from this app is identical
+      whether you track a partner's cycle or track none</strong> — so nobody you hand it to can tell
+      the difference. We considered noting the exclusion and decided against it: saying "a partner's
+      cycle was omitted here" would itself tell a stranger that another person's reproductive data
+      exists on your phone.</li>
+      <li><strong>What they have agreed to:</strong> nothing, because they have no relationship with
+      us and we hold nothing of theirs. Whether to record another person's health information is
+      your decision — and one better made with them than about them. The app says the same thing
+      when you set it up.</li>
+    </ul>
+
+    <h3>Abstinence counters</h3>
+    <p>The app can count the days since you stopped something — alcohol, nicotine, cannabis, sugar,
+    caffeine, or a label you write yourself — optionally toward a milestone, with a note about what
+    it means to you.</p>
+    <p>We treat that as sensitive information rather than as a streak counter, because that is what
+    it is. It is encrypted on your device alongside everything else and we never receive it.</p>
 
     <h3>How the encryption works</h3>
     <p>The key that opens the database is derived from the PIN you set, and is not stored anywhere in
@@ -140,6 +207,10 @@
     <p><strong>We have no copy of any of it.</strong> If you lose your phone we cannot recover your
     records, and if you forget your PIN we cannot reset it. That is a direct consequence of the
     design rather than an oversight, and you should plan your own backups accordingly.</p>
+    <p>There is a <strong>second and separate reason</strong> to keep your own copy. The database
+    engine the app is built on carries a known defect that can, in some circumstances, lose a
+    recently saved entry without warning. There is no fixed version available to us yet. It is
+    described in full on the <a href="/security">security page</a>.</p>
     <p>The full specifics — cipher, key derivation, iteration count — are on the
     <a href="/security">security page</a>. Being straight with you about what this does and does
     not protect against:</p>
@@ -155,9 +226,12 @@
     </ul>
 
     <h2>What we collect</h2>
-    <p><strong>Nothing.</strong> The app has no user accounts and no sign-in. It does not report usage,
-    does not phone home, and contains no advertising or analytics software. We do not know who you
-    are, that you installed the app, or whether you still use it.</p>
+    <p><strong>Nothing on its own.</strong> The app has no user accounts and no sign-in. It does not
+    report usage, does not phone home, and contains no advertising or analytics software.</p>
+    <p>There is <strong>one</strong> way anything reaches us, and it only happens if you deliberately
+    make it happen: the app can write a short check-in message for you to send us from your own
+    phone. It is described in full below. <strong>Unless you send that message, we do not know who
+    you are, that you installed the app, or whether you still use it.</strong></p>
 
     <h2>Connections the app makes</h2>
     <p>Below is every connection Sovereign Vault makes, what it carries, and what it is for.</p>
@@ -214,6 +288,9 @@
       <strong>local read on your own device</strong>, mediated by your operating system and limited to
       the data types you approve. Nothing is transmitted over the network and no third party receives
       it. You can withdraw these permissions at any time in your device's system settings.</p>
+      <p><strong>What the app reads this way becomes part of your record</strong>, alongside what you
+      typed. That means it is shown to you in the app and it is included when you copy your record
+      out — see below.</p>
     </div>
 
     <h2>Taking your data out</h2>
@@ -222,7 +299,20 @@
       <span class="flowmeta">You start it · clipboard only</span>
       <h3>Export</h3>
       <p>The app can produce a summary of your record — as JSON or as Markdown — so you can take it
-      elsewhere: to your own notes, to a clinician, or to an AI tool you want to ask questions of.</p>
+      elsewhere: to your own notes, to a clinician, or to an AI tool you want to ask questions of.
+      That summary covers <strong>your whole record — both what you entered and what the app read
+      from services you connected</strong>: what you take, with doses, units, routes and schedules;
+      how your protocol has changed over time; your adherence history; lab results; body weight and
+      blood pressure; training plans and sessions; your abstinence counters; and the readings pulled
+      from Apple Health, Health Connect or a wearable — heart rate variability, resting heart rate,
+      sleep, steps, strain, VO2 max.</p>
+      <p><strong>Two limitations worth knowing while we fix them.</strong> Readings that came from
+      Apple Health or Health Connect are not currently marked as such in what you copy out, so a
+      reader cannot tell them apart from figures you typed yourself. They also carry no date of their
+      own — so if a sync has fallen behind, a reading can be older than it looks. We are adding
+      source and date labelling, and this section changes when we do.</p>
+      <p><strong>Cycle entries are included only when the cycle is your own.</strong> If you are
+      tracking a partner's cycle, all of it is excluded — see above.</p>
       <p><strong>That summary is copied to your device's clipboard, and that is the only thing that
       happens.</strong> No file is written to your device. Nothing is shared through your device's
       share sheet. The app does not transmit it anywhere. It is placed on your clipboard and left
@@ -235,11 +325,30 @@
       able to take your data anywhere you want it.</p>
     </div>
 
+    <div class="flow">
+      <span class="flowmeta">You send it · your own messaging app</span>
+      <h3>The check-in message</h3>
+      <p>A few days in, the app may show a short check-in card. It asks whether you expect to still be
+      logging in two weeks, whether you would recommend the app, and — if you would not — what is
+      missing, in a box you type into yourself.</p>
+      <p>If you choose to answer, <strong>the app opens your own messaging app with the message
+      already written</strong>, addressed to a Barca Labs phone number. It contains your answers and
+      whatever you typed, exactly as you wrote it.</p>
+      <p><strong>The app cannot send it. You send it, from your own number, after reading it.</strong>
+      If you do send it, we receive your phone number along with the message — that is simply how text
+      messages work, and it is the one thing in this entire app that could identify you to us. If you
+      would rather we did not have it, dismiss the card, or delete the message instead of sending.</p>
+      <p>Because you write that free-text part yourself, <strong>please do not put anything in it you
+      would not put in an ordinary text message.</strong> It travels as a normal SMS and it is not
+      protected the way your vault is.</p>
+    </div>
+
     
     <h2>Diagnostics and analytics</h2>
-    <p>Sovereign Vault contains <strong>no analytics software, no advertising software, no crash
-    reporting service, and no third-party tracking of any kind.</strong> Beyond the connections
-    described above, the app makes no network requests.</p>
+    <p><strong>As of 30 August 2026, Sovereign Vault contains no analytics software, no advertising
+    software, no crash reporting service, and no third-party tracking of any kind.</strong> Beyond
+    the connections described above, the app makes no network requests. If that ever changes, this
+    section changes with it and the effective date above moves.</p>
     <p>Your device's operating system and the app store you installed from may collect their own
     diagnostic information, independently of the app. That collection is controlled by Apple's and
     Google's settings and policies, and by the choices you have made in your device settings.</p>
@@ -290,7 +399,7 @@
   </main>
 
   <footer>
-    <p><a href="/">Barca Labs</a></p>
+    <p><a href="/sovereign-vault">Sovereign Vault</a> · <a href="/security">Security</a> · <a href="/terms">Terms</a> · <a href="/support">Support</a> · <a href="/">Barca Labs</a></p>
     <p>© 2026 Barca Labs, LLC. All rights reserved.</p>
   </footer>
 
