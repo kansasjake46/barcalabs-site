@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get notified — Sovereign Vault</title>
+<meta name="description" content="Sovereign Vault is in testing. Leave an email and we'll tell you when it's on the App Store. Email only — nothing else.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230a0b0d'/><g stroke='%23d8b47a' stroke-width='9' fill='none'><path d='M37 11 L53 27'/><path d='M53 37 L37 53'/><path d='M27 53 L11 37'/><path d='M11 27 L27 11'/></g></svg>">
+
+<style>
+  :root{
+    --ink:#0a0b0d; --surface:#14161a; --line:#22262c;
+    --muted:#828994; --secondary:#b6bcc4; --text:#f2efe9; --accent:#d8b47a;
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--ink); color:var(--text); font-family:var(--sans); font-size:16px; line-height:1.68; -webkit-font-smoothing:antialiased}
+  .wrap{max-width:600px; margin:0 auto; padding:0 28px}
+  a{color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(216,180,122,.3)}
+  a:hover{border-bottom-color:var(--accent)}
+
+  .site{display:flex; align-items:center; padding:38px 0 0}
+  .wordmark{display:inline-flex; flex-direction:column; align-items:flex-start; gap:10px; border-bottom:none}
+  .wordmark .rule{width:40px; height:1px; background:var(--accent)}
+  .wordmark .name{font-size:14px; font-weight:500; letter-spacing:.19em; text-transform:uppercase; color:var(--text)}
+
+  main{padding:76px 0 0}
+  h1{font-size:32px; line-height:1.22; font-weight:600; letter-spacing:-.018em; margin:0 0 24px; max-width:16ch}
+  p{margin:0 0 20px; color:var(--secondary)}
+  strong{color:var(--text); font-weight:600}
+
+  form{margin:38px 0 22px; display:flex; gap:10px; flex-wrap:wrap}
+  input[type=email]{
+    flex:1 1 260px; min-width:0;
+    background:var(--surface); border:1px solid var(--line); border-radius:4px;
+    color:var(--text); font-family:inherit; font-size:16px; padding:14px 15px;
+  }
+  input[type=email]::placeholder{color:var(--muted)}
+  input[type=email]:focus{outline:none; border-color:var(--accent)}
+  button{
+    flex:0 0 auto; cursor:pointer;
+    background:var(--accent); border:1px solid var(--accent); border-radius:4px;
+    color:var(--ink); font-family:inherit; font-size:15px; font-weight:600;
+    padding:14px 24px;
+  }
+  button:hover{background:#e2c390; border-color:#e2c390}
+  .hp{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden}
+  .sr{position:absolute; left:-9999px}
+
+  .fine{font-size:14.5px; color:var(--muted); margin:0 0 34px; max-width:56ch}
+  .fine strong{color:var(--secondary)}
+
+  footer{margin-top:64px; padding:30px 0 76px; border-top:1px solid var(--line); color:var(--muted); font-size:13.5px}
+  footer p{color:var(--muted); font-size:13.5px; margin:0 0 10px}
+
+  @media (max-width:640px){
+    h1{font-size:26px; max-width:none} main{padding-top:52px}
+    .site{padding-top:30px}
+    button{flex:1 1 100%}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="site">
+    <a class="wordmark" href="/"><span class="rule"></span><span class="name">Barca Labs</span></a>
+  </header>
+
+  <main>
+    <h1>Glad you found us early.</h1>
+
+    <p><strong>The hard part isn't running your protocol. It's tracking it</strong> — so you know
+    what's working, what needs adjustment, and what just flat out isn't working like you hoped.</p>
+
+    <p>You take this seriously — real time, real money. So all of it goes in one place: every
+    compound, every dose, every workout, every lab, every night of sleep your watch recorded — on
+    one timeline where you can see them against each other.</p>
+
+    <p>Easy to log, easy to look back on, and yours alone — encrypted on your phone, where only
+    you can open it. When you want a second opinion, the whole record copies out in one go: into
+    the AI you already use, or off to your doctor.</p>
+
+    <p>It's in testing now. Leave an email and you'll know the day it lands on the App Store.</p>
+
+    <form method="POST" action="/api/notify">
+      <label class="sr" for="email">Email address</label>
+      <input type="email" id="email" name="email" placeholder="your@email.com"
+             required autocomplete="email" spellcheck="false" autocapitalize="off">
+      <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button type="submit">Notify me</button>
+    </form>
+
+    <p class="fine"><strong>Just the email.</strong> We don't want your name, your phone, or a
+    list of what you're taking. We'll only ever write to you about Sovereign Vault, and you can
+    unsubscribe in a click.</p>
+
+    <p class="fine"><a href="/sovereign-vault">More about the app</a> ·
+    <a href="/privacy">Privacy</a></p>
+  </main>
+
+  <footer>
+    <p><a href="/sovereign-vault">Sovereign Vault</a> · <a href="/security">Security</a> ·
+    <a href="/privacy">Privacy policy</a> · <a href="/terms">Terms</a> ·
+    <a href="/support">Support</a></p>
+    <p>© 2026 Barca Labs, LLC</p>
+  </footer>
+
+</div>
+</body>
+</html>
