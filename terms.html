@@ -98,7 +98,7 @@
 
   <div class="title">
     <h1>Terms of Service</h1>
-    <p class="dates">Effective 30 August 2026 · Last updated 30 August 2026</p>
+    <p class="dates">Effective 30 August 2026 · Last updated 7 October 2026</p>
   </div>
 
   <main>
@@ -133,11 +133,11 @@
     <h2>3. What the app is, and what it is not</h2>
     <p>Sovereign Vault is a <strong>record-keeping tool</strong>. It stores what you enter, organises
     it, and shows it back to you.</p>
-    <p>It can also <strong>prepare your record to be handed to someone else</strong> — a clinician,
-    or an AI tool you choose to ask — by attaching context describing what the data is, where it
-    came from, and how it should be read. That context is about the data. It does not contain an
-    assessment, a conclusion, or an opinion about your health, and it is not sent anywhere: it is
-    placed on your clipboard with your record, for you to paste.</p>
+    <p>It can also <strong>prepare your record to hand to someone else</strong>, such as a clinician
+    or an AI tool you choose to ask. It attaches context describing what the data is, where it came
+    from, and how to read it. That context is about the data. It contains no assessment, conclusion
+    or opinion about your health. The app never sends it anywhere. It is either copied to your
+    clipboard for you to paste, or saved as a spreadsheet file for you to send wherever you choose.</p>
     <p>It does not diagnose. It does not treat. It does not advise. It does not calculate or
     recommend a dose, flag a risk, interpret a lab result, or tell you what any of your data means.
     Where it displays a number, that number is one you entered or one your own device supplied.</p>
@@ -176,19 +176,25 @@
 
     <h2>5. Your data, and why we cannot recover it</h2>
     <p>Sovereign Vault stores your records in an encrypted database on your own device. There is no
-    account, no server of ours, and no backup or sync service. We hold no copy of your records and
-    no copy of the key that opens them.</p>
+    account, no server of ours and no sync service. We hold no copy of your records and no copy of
+    the key that opens them. The app can make an encrypted backup file of your vault, which you
+    store wherever you choose. We never receive it.</p>
     <p>That design has a consequence you should understand before you rely on the app:</p>
     <ul>
-      <li><strong>If you forget your PIN, your records cannot be recovered</strong> — not by you and
-      not by us. We cannot reset it, bypass it, or read the database without it.</li>
+      <li><strong>If you forget your PIN</strong>, we cannot reset it, bypass it, or read the database
+      without it. The only way back in is the recovery code you saved when you set up the app. If you
+      forget your PIN and do not have your recovery code, your records cannot be recovered, by you or
+      by us.</li>
+      <li><strong>A backup file can only be opened with your recovery code.</strong> If you lose the
+      code, the backup cannot be opened by anyone, including us.</li>
       <li><strong>If you delete the app, lose your device, or your device fails or is wiped</strong>,
       your records are gone unless you have made your own arrangements to preserve them.</li>
-      <li><strong>Device backups behave differently on iOS and Android</strong>, as described in the
-      <a href="/privacy">privacy policy</a> and on the <a href="/security">security page</a>.</li>
+      <li><strong>Your phone's own backup does not bring your vault back.</strong> The app's backup
+      file and your recovery code do. See the <a href="/privacy">privacy policy</a> and the
+      <a href="/security">security page</a>.</li>
     </ul>
-    <p><strong>Keeping your own backup is your responsibility.</strong> The export function exists so
-    that you can.</p>
+    <p><strong>Keeping your own backup is your responsibility.</strong> The backup and export
+    functions exist so that you can.</p>
     <p>Beyond the design consequences above, the database engine the app is built on carries a known
     defect that can cause a recently saved entry to be lost. No corrected version is available to us
     at present. It is described in full on our <a href="/security">security page</a>, and it is a
@@ -202,12 +208,12 @@
     </div>
 
     <h2>6. Exports</h2>
-    <p>The app can copy a summary of your record to your device's clipboard. That summary reflects
-    what you entered — no more and no less. Its usefulness and its accuracy depend entirely on the
-    accuracy and completeness of your own records.</p>
-    <p><strong>Check an export before you rely on it, and check it before you give it to anyone
-    else</strong>, including a clinician or an AI tool. Once you paste it somewhere, that copy is
-    governed by whatever you pasted it into and is outside our control entirely.</p>
+    <p>The app can copy a summary of your record to your device's clipboard, or save it as a
+    spreadsheet file. Either way, it reflects what you entered, no more and no less. Its usefulness
+    and accuracy depend entirely on the accuracy and completeness of your own records.</p>
+    <p>An export is not encrypted. <strong>Check it before you rely on it, and before you give it to
+    anyone else</strong>, including a clinician or an AI tool. Once you paste or send it somewhere,
+    that copy is governed by wherever it went, and it is outside our control entirely.</p>
     <p>Where you paste your record into an AI tool, <strong>anything that tool tells you comes from
     that tool and not from us</strong>. We do not see the question you asked or the answer you were
     given, we do not review it, and we do not verify, endorse or take responsibility for it. The

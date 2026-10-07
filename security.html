@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Security — Sovereign Vault</title>
-<meta name="description" content="How Sovereign Vault encrypts your data on your device, and what that protection does and does not cover.">
+<meta name="description" content="How Sovereign Vault protects your records, what that protection does not cover, and a known defect we have not fixed.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230a0b0d'/><g stroke='%23d8b47a' stroke-width='9' fill='none'><path d='M37 11 L53 27'/><path d='M53 37 L37 53'/><path d='M27 53 L11 37'/><path d='M11 27 L27 11'/></g></svg>">
 
 <style>
@@ -16,7 +16,7 @@
   }
   *{box-sizing:border-box}
   body{margin:0; background:var(--ink); color:var(--text); font-family:var(--sans); font-size:16px; line-height:1.68; -webkit-font-smoothing:antialiased}
-  .wrap{max-width:660px; margin:0 auto; padding:0 28px}
+  .wrap{max-width:680px; margin:0 auto; padding:0 28px}
   a{color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(216,180,122,.3)}
   a:hover{border-bottom-color:var(--accent)}
 
@@ -27,48 +27,45 @@
   nav{display:flex; gap:26px; align-items:center}
   nav a{font-size:13.5px; color:var(--secondary); border-bottom:1px solid transparent}
   nav a:hover{color:var(--text); border-bottom-color:rgba(216,180,122,.5)}
-  nav a[aria-current]{color:var(--accent)}
   .navtoggle{display:none}
   .burger{display:none; cursor:pointer; padding:8px; margin:-8px}
   .burger span{display:block; width:20px; height:1.5px; background:var(--secondary); margin:4px 0}
 
   .crumb{padding:42px 0 0; font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
   .crumb a{color:var(--muted); border-bottom-color:transparent}
-
-  .title{padding:26px 0 40px; border-bottom:1px solid var(--line)}
-  h1{font-size:32px; line-height:1.22; font-weight:600; letter-spacing:-.018em; margin:0 0 16px}
+  .plain{color:var(--text); font-size:16.5px}
+  .small{font-size:14px; color:var(--muted)}
+  .warn{border-left:2px solid var(--accent); padding:4px 0 4px 16px; color:var(--text)}
+  .title{padding:22px 0 44px; border-bottom:1px solid var(--line)}
+  h1{font-size:34px; line-height:1.2; font-weight:600; letter-spacing:-.018em; margin:0 0 16px}
   .standfirst{font-size:17.5px; color:var(--secondary); margin:0; max-width:56ch}
 
-  h2{font-size:19px; font-weight:600; letter-spacing:-.01em; margin:46px 0 14px}
-  p{margin:0 0 18px; color:var(--secondary); max-width:60ch}
+  main{padding:12px 0 0}
+  h2{font-size:19px; font-weight:600; letter-spacing:-.01em; margin:48px 0 14px}
+  p{margin:0 0 18px; color:var(--secondary); max-width:62ch}
+  ul{margin:0 0 18px; padding-left:22px; color:var(--secondary); max-width:62ch}
+  li{margin-bottom:12px}
   strong{color:var(--text); font-weight:600}
-  code{font-family:var(--mono); font-size:13px; color:var(--accent); background:var(--surface); padding:2px 6px; border-radius:3px; border:1px solid var(--line)}
+  code{font-family:var(--mono); font-size:13.5px; color:var(--text)}
 
-  table{width:100%; border-collapse:collapse; font-size:14.5px; margin:0 0 20px}
-  th{text-align:left; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:600; padding:0 16px 12px 0; border-bottom:1px solid var(--line)}
-  td{padding:14px 16px 14px 0; border-bottom:1px solid var(--line); vertical-align:top; color:var(--secondary)}
-  td:first-child{color:var(--text); font-weight:500; white-space:nowrap}
+  .tbl{overflow-x:auto; margin:0 0 22px}
+  table{border-collapse:collapse; width:100%; font-size:14.5px}
+  th,td{text-align:left; vertical-align:top; padding:12px 14px; border-bottom:1px solid var(--line)}
+  th{color:var(--muted); font-weight:600; font-size:12px; letter-spacing:.12em; text-transform:uppercase}
+  td{color:var(--secondary)}
+  td:first-child{color:var(--text); white-space:nowrap}
 
-  ul{margin:0 0 18px; padding-left:22px; color:var(--secondary)}
-  li{margin-bottom:11px}
-
-  .callout{background:var(--surface); border:1px solid var(--line); border-left:2px solid var(--accent); border-radius:4px; padding:22px 24px; margin:32px 0}
-  .callout p{margin:0; color:var(--text)}
-
-  footer{margin-top:66px; padding:34px 0 84px; border-top:1px solid var(--line); color:var(--muted); font-size:13.5px}
+  footer{margin-top:72px; padding:34px 0 76px; border-top:1px solid var(--line); color:var(--muted); font-size:13.5px}
   footer p{color:var(--muted); font-size:13.5px; margin:0 0 10px}
 
   @media (max-width:640px){
-    h1{font-size:26px}
+    h1{font-size:27px} .title{padding:18px 0 36px}
     .site{padding-top:30px}
     .burger{display:block}
     nav{display:none; width:100%; flex-direction:column; align-items:flex-start; gap:0; margin-top:20px; border-top:1px solid var(--line)}
     nav a{padding:15px 0; width:100%; border-bottom:1px solid var(--line); font-size:15px}
     .navtoggle:checked ~ nav{display:flex}
-    table, thead, tbody, tr, td, th{display:block; width:100%}
-    thead{display:none}
-    td{padding:6px 0; border:none}
-    tr{border-bottom:1px solid var(--line); padding:14px 0; display:block}
+    td:first-child{white-space:normal}
   }
 </style>
 </head>
@@ -90,111 +87,134 @@
 
   <div class="title">
     <h1>How your data is protected</h1>
-    <p class="standfirst">The specifics, for people who want them — including what this protection
-    does not cover.</p>
+    <p class="standfirst">The details, for people who want them. Including what this protection does not cover.</p>
   </div>
 
-  <h2>The encryption</h2>
-  <table>
-    <thead><tr><th>Component</th><th>Implementation</th></tr></thead>
-    <tbody>
-      <tr>
-        <td>Database</td>
-        <td>SQLCipher, via the <code>expo-sqlite</code> config plugin. The database file is
-        ciphertext at rest.</td>
-      </tr>
-      <tr>
-        <td>Key derivation</td>
-        <td>PBKDF2-HMAC-SHA256 at 310,000 iterations, derived directly from the PIN you set.</td>
-      </tr>
-      <tr>
-        <td>Salt storage</td>
-        <td><code>expo-secure-store</code> — the Keychain on iOS, the Keystore on Android.</td>
-      </tr>
-      <tr>
-        <td>Biometric unlock</td>
-        <td>Generates no separate key material. It gates access to the same PIN-derived key behind
-        <code>requireAuthentication</code>.</td>
-      </tr>
-    </tbody>
-  </table>
+  <main>
 
-  <p>The key is derived on your device and never leaves it. We hold no copy of it and no copy of
-  your data. <strong>If you forget your PIN, we cannot reset it, and your records cannot be
-  recovered.</strong> That follows from the design rather than being an oversight — plan your own
-  backups accordingly. There is a second reason to keep your own copy, and it is not about
-  encryption: see <a href="#defect">the defect described below</a>.</p>
+    <h2>The encryption</h2>
 
-  <div class="callout">
+    <p class="plain"><strong>In plain English:</strong> your records are locked with a random key
+    made on your phone. Your PIN unlocks that key. Your recovery code unlocks your backups. We hold
+    none of them. The app contains no analytics, crash-reporting or advertising code, and it talks
+    to the internet for three things only: update checks, the app store's purchase system, and
+    Polar if you connect it.</p>
+
+    <div class="tbl">
+    <table>
+      <thead><tr><th>Component</th><th>Implementation</th></tr></thead>
+      <tbody>
+        <tr><td>Database</td><td>SQLCipher: AES-256-CBC, with HMAC-SHA512 authentication on every page. The database file is ciphertext at rest.</td></tr>
+        <tr><td>Database key</td><td>A random 256-bit key, generated on your phone. It is not derived from your PIN.</td></tr>
+        <tr><td>Your PIN</td><td>Unlocks the database key. The key is wrapped with AES-256-GCM under a key derived from your PIN: PBKDF2-HMAC-SHA256, 600,000 iterations.</td></tr>
+        <tr><td>Key storage</td><td>The PIN-locked key, with its salt, lives in your phone's secure storage: the Keychain on iOS, the Keystore on Android. Nowhere else.</td></tr>
+        <tr><td>Face ID and fingerprint</td><td>Add no new key. They unlock the same key that already protects your vault, kept in secure storage behind your phone's own biometric check.</td></tr>
+        <tr><td>Recovery code</td><td>25 characters in Crockford Base32, 125 bits of entropy, from a cryptographically secure random source.</td></tr>
+        <tr><td>Backup file</td><td>Encrypted with its own random 256-bit key, not your vault's key. That key is wrapped with AES-256-GCM under a key derived from your recovery code: PBKDF2-HMAC-SHA256, 100,000 iterations. The app keeps no copy of the file.</td></tr>
+        <tr><td>Third-party code</td><td>Expo and React Native libraries for the database, encryption, secure storage, Face ID, files, sharing and the clipboard. No analytics, crash-reporting or advertising SDKs.</td></tr>
+        <tr><td>Network</td><td>Expo's update check, Apple's or Google's purchase system, and Polar if you connect it. The <a href="/privacy">privacy policy</a> lists what each one sends.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p class="small">Vaults created before 28 August 2026, during early testing, use an older scheme:
+    the database key is derived directly from the PIN, with PBKDF2-HMAC-SHA256 at 310,000
+    iterations. Every vault created since, including every App Store customer's, uses the scheme
+    above.</p>
+
+    <p>The key is generated on your phone and never leaves it. We hold no copy of it and no copy of your data. <strong>If you forget your PIN, we cannot reset it.</strong> The only way back in is a recovery code you have saved. Without one, your records cannot be recovered. That is by design, not an oversight. So save your code, and keep your own copies. There is a second reason to keep copies, and it has nothing to do with encryption. See <a href="#defect">the defect described below</a>.</p>
+
     <p>Biometric unlock is a faster route to the same key, not a second way in. If someone has your
     PIN, biometrics do not add a second lock. If they have neither, the database is unreadable
     ciphertext.</p>
-  </div>
 
-  <h2 id="defect">A defect we have not fixed</h2>
-  <p>Sovereign Vault stores your records in <strong>SQLite</strong>, the database engine underneath
-  most of the apps on your phone. SQLite has a flaw in the way it writes to disk. It has been there
-  since 2010 and was corrected upstream in March 2026 — subtle enough to go unnoticed for sixteen
-  years. <strong>The library we build on has not picked up that correction, and there is no version
-  we can ship today that has it.</strong></p>
-  <p>It can cause a recently saved entry to be lost. Silently — no error, no warning, it is simply
-  not there.</p>
-  <p>How often depends on how an app uses the database, and <strong>we are still working out how
-  much our own use increases the risk.</strong> We would rather tell you that than give you a number
-  we cannot stand behind.</p>
-  <p><strong>Most apps carrying this same defect keep a copy of your data on their servers, so a
-  lost write is recoverable there. We do not, by design.</strong> The defect is ordinary. The
-  consequence here is not — and that is the honest cost of an app with no server, stated plainly
-  rather than left for you to discover.</p>
-  <p>What it means for you: <strong>copy your record out from time to time and keep it somewhere.</strong>
-  That is the only protection available today, and it is the reason the export exists. We will change
-  this section when the fix reaches us.</p>
+    <h2 id="defect">A defect we have not fixed</h2>
 
-  <h2>What this does not protect against</h2>
-  <p>Encryption at rest solves one problem well and several others not at all. Rather than let the
-  phrase imply more than it delivers:</p>
-  <ul>
-    <li><strong>Device backups — there are two different things in play.</strong> The
-    <strong>key material in your device's secure storage</strong> (the Keychain on iOS, the Keystore
-    on Android) behaves one way: on iOS it carries into an encrypted iCloud or computer backup and
-    can be restored to a new device; on Android it is excluded from cloud backups and device
-    transfers. On both platforms it stays out of <em>unencrypted</em> local backups.</li>
-    <li><strong>The recovery file is different, and that one is our choice rather than the
-    platform's.</strong> If you set up a recovery code, the app writes a small file that your code
-    unlocks. It is an ordinary file in the app's storage, so it <strong>is included in device
-    backups on both platforms</strong>. We did not exclude it and we could have — because a recovery
-    code that cannot travel to a new phone would only ever work on the device that never needed it.
-    <strong>The cost of that is real and you should weigh it:</strong> someone holding both your
-    backup and your recovery code could open your vault. Keep the code somewhere your backups do
-    not reach.</li>
-    <li><strong>An unlocked device in someone else's hands.</strong> With your phone and your PIN or
-    biometric, the app shows them your records exactly as it shows you. No encryption scheme helps
-    here.</li>
-    <li><strong>A jailbroken or rooted device.</strong> Keychain and Keystore isolation can
-    potentially be defeated where the operating system's protections have been removed.</li>
-    <li><strong>Anything you export.</strong> Once a copy leaves the app it is governed by wherever
-    you put it. See below.</li>
-  </ul>
+    <p>Sovereign Vault stores your records in <strong>SQLite</strong>, the database engine underneath most of the apps on your phone. SQLite has a flaw in the way it writes to disk. It has been there since 2010. It was subtle enough to go unnoticed for sixteen years, and was fixed upstream in March 2026. <strong>The library we build on has not picked up that fix, and there is no version we can ship today that has it.</strong></p>
 
-  <h2>What leaves the device</h2>
-  <p>The app makes a small number of network requests and none of them carry your records. Each one
-  is described in full, including what it sends and why, in the
-  <a href="/privacy">privacy policy</a>.</p>
-  <p><strong>We run no server.</strong> There is no account, no sync service, and no infrastructure
-  of ours holding a copy — which also means there is nothing of yours for us to lose, sell, or be
-  compelled to produce.</p>
+    <p>It can cause a recently saved entry to disappear. There is no error and no warning. The entry is simply gone.</p>
 
-  <h2>Exports</h2>
-  <p>The app can copy your record out as text — JSON or Markdown — onto your device's clipboard.
-  No file is written and nothing is shared through the operating system's share sheet.</p>
-  <p>Once you place it somewhere else — an AI assistant, an email, a cloud drive, a printout — that
-  copy is governed by whatever you put it into, and it is outside our reach entirely. Nothing we do
-  protects a copy you have handed to someone else. That is the trade for being able to take your
-  data anywhere you want it.</p>
+    <p>How often depends on how an app uses the database, and <strong>we are still working out how
+    much our own use increases the risk.</strong> We would rather tell you that than give you a
+    number we cannot stand behind.</p>
+
+    <p><strong>Most apps with this same defect keep a copy of your data on their servers, so a lost entry can be recovered there. We do not, by design.</strong> The defect is ordinary. The consequence here is not. That is the real cost of an app with no server, and we would rather tell you now than have you find out later.</p>
+
+    <p>What this means for you: <strong>make your own copies regularly</strong>, as a backup, an export, or both. That is the only protection available today, and it is why both exist. A backup holds your vault as it was when you made it. An entry lost before then is not in it. We will update this section when the fix reaches us.</p>
+
+    <h2 id="newphone">If you get a new phone</h2>
+
+    <p><strong>Your phone's own backup will not bring your vault back.</strong> On iPhone, the vault is left out of iCloud and computer backups entirely. On Android, a Google backup may hold the encrypted vault file, but never a key that opens it, so a restored copy stays locked. Either way, restoring a phone does not restore your records. That is deliberate: your records stay out of every backup the app does not control.</p>
+
+    <p><strong>The only way to move your vault is the app's own backup file.</strong> Make one in the app and save it to iCloud Drive or Google Drive, so it's there when you get a new phone. Then open it on the new phone with your recovery code. Keep the code somewhere else, not next to the file.</p>
+
+    <p class="warn"><strong>Make a backup file before you change phones.</strong> If you set up a
+    new phone without one, your vault will not be on it, and nobody can get it back, including
+    us.</p>
+
+    <p>The <strong>backup file</strong> is an encrypted copy of your whole vault. <strong>Your recovery code is the only key to it.</strong> We hold no copy of that code, and nothing else opens the file. Without the code, nobody can open the backup, including us. On the new phone, you pick the file, enter your recovery code and set a new PIN. Your old PIN does not come across. Before anything is restored, the app shows you when the backup was made, so you can tell an old copy from a recent one.</p>
+
+    <p>Everything in the vault comes back. That includes what you take, doses and schedules, labs, weight and blood pressure, training, cycle, notes and wearable readings. It also includes the app's own records, like your reminders and which cards you have seen. Two things stay behind. <strong>Your PIN</strong>, which is why you set a new one. And <strong>your purchase</strong>, which belongs to your app store account and comes back through Apple or Google.</p>
+
+    <ul>
+      <li><strong>Face ID and fingerprint unlock never survive a restore</strong>, on either platform.
+      Your PIN still opens the vault, and you can turn biometrics back on.</li>
+    </ul>
+
+    <p><strong>The cost of that choice, stated plainly:</strong> anyone holding your backup file and
+    your recovery code can open your vault on any phone. Keep the file and the code apart, and treat
+    the code as carefully as your PIN.</p>
+
+    <p><strong>One honest note about how mature this is.</strong> The recovery code has been used on a real phone: a saved code opened a vault after a forgotten PIN. <strong>Moving a vault to a new phone with a backup file has not been tested on a real device, on either platform.</strong> When it has, this paragraph will say so. Until then, do not rely on a backup file alone. Export your record as well, and keep that too.</p>
+
+    <h2>What this does not protect against</h2>
+
+    <p>Encryption at rest solves one problem well and several others not at all. Rather than let the
+    phrase imply more than it delivers:</p>
+
+    <ul>
+      <li><strong>Your phone's own backups.</strong> On iPhone, the vault is left out of iCloud and computer backups. On Android, a Google backup can hold the encrypted vault file but never a key to open it. A phone backup will not save your records on either platform. Only the app's backup file does.</li>
+      <li><strong>Your recovery code.</strong> It opens your vault after a forgotten PIN, and it is the only key to a backup file. Someone with both your backup file and your code could open your vault. Guard the code like your PIN, and keep it apart from the file.</li>
+      <li><strong>An unlocked device in someone else's hands.</strong> With your phone and your PIN or
+      biometric, the app shows them your records exactly as it shows you. No encryption scheme helps
+      here.</li>
+      <li><strong>A jailbroken or rooted device.</strong> Keychain and Keystore isolation can
+      potentially be defeated where the operating system's protections have been removed.</li>
+      <li><strong>A backup file plus your recovery code.</strong> Together, they open your vault on any phone. Keep them apart. A backup stored next to its code protects nobody.</li>
+      <li><strong>Anything you export.</strong> An export is not encrypted, and once a copy leaves
+      the app it is governed by wherever you put it. See below.</li>
+    </ul>
+
+    <h2>What leaves the device</h2>
+
+    <p>The app makes a small number of network requests and none of them carry your records. Each
+    one is described in full, including what it sends and why, in the
+    <a href="/privacy">privacy policy</a>.</p>
+
+    <p><strong>We run no server.</strong> There is no account and no sync service, and nothing of ours holds a copy. So there is nothing of yours for us to lose, sell or be forced to hand over.</p>
+
+    <h2>Backups and exports are not the same thing</h2>
+
+    <p>Two different things can leave your phone, and only one of them is encrypted.</p>
+
+    <ul>
+      <li><strong>A backup is encrypted, and it is always a file.</strong> It is a copy of the vault
+      itself, and your recovery code is the only key. Someone who finds it without the code has a
+      file they cannot open.</li>
+      <li><strong>An export is not encrypted.</strong> It is your record in a form made to be read, and <strong>anyone who can open it can read all of it.</strong> That is the point. You take it to a doctor, or to an AI you want to ask questions. It is also the risk.</li>
+    </ul>
+
+    <p>An export leaves in one of two ways. Markdown, JSON and the brief are <strong>copied to your
+    clipboard</strong> for you to paste. The spreadsheet is <strong>saved as a file</strong> and
+    handed to your phone’s share sheet, so it goes wherever you send it.</p>
+
+    <p>You start all of it, and the app keeps no copy. It hands the file over and deletes its own. Where it goes next, whether a cloud drive, an email or a chat, is up to you and out of our reach. Nothing we do can protect a copy you have handed to someone else. That is the trade-off for being able to take your data anywhere.</p>
+
+  </main>
 
   <footer>
-    <p><a href="/sovereign-vault">Sovereign Vault</a> · <a href="/privacy">Privacy policy</a> · <a href="/terms">Terms</a> · <a href="/support">Support</a> ·
-    <a href="/">Barca Labs</a></p>
+    <p><a href="/sovereign-vault">Sovereign Vault</a> · <a href="/privacy">Privacy policy</a> ·
+    <a href="/terms">Terms</a> · <a href="/support">Support</a> · <a href="/">Barca Labs</a></p>
     <p>© 2026 Barca Labs, LLC</p>
   </footer>
 

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Support — Sovereign Vault</title>
-<meta name="description" content="What we can help with, what we cannot, and how to reach a person. Including the things this app is unable to do for you.">
+<meta name="description" content="Forgot your PIN, moving to a new phone, or something not working in Sovereign Vault? Start here. Mail goes to a person.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230a0b0d'/><g stroke='%23d8b47a' stroke-width='9' fill='none'><path d='M37 11 L53 27'/><path d='M53 37 L37 53'/><path d='M27 53 L11 37'/><path d='M11 27 L27 11'/></g></svg>">
 
 <style>
@@ -14,7 +14,7 @@
     --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
   *{box-sizing:border-box}
-  body{margin:0; background:var(--ink); color:var(--text); font-family:var(--sans); font-size:16px; line-height:1.68; -webkit-font-smoothing:antialiased}
+  body{margin:0; background:var(--ink); color:var(--text); font-family:var(--sans); font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased}
   .wrap{max-width:680px; margin:0 auto; padding:0 28px}
   a{color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(216,180,122,.3)}
   a:hover{border-bottom-color:var(--accent)}
@@ -31,41 +31,61 @@
   .burger{display:none; cursor:pointer; padding:8px; margin:-8px}
   .burger span{display:block; width:20px; height:1.5px; background:var(--secondary); margin:4px 0}
 
-  .title{padding:64px 0 44px; border-bottom:1px solid var(--line)}
-  h1{font-size:34px; line-height:1.2; font-weight:600; letter-spacing:-.018em; margin:0 0 16px}
-  .standfirst{font-size:17.5px; color:var(--secondary); margin:0; max-width:56ch}
+  .crumb{padding:42px 0 0; font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+  .crumb a{color:var(--muted); border-bottom-color:transparent}
 
-  main{padding:12px 0 0}
-  h2{font-size:19px; font-weight:600; letter-spacing:-.01em; margin:48px 0 14px}
-  h3{font-size:16px; font-weight:600; margin:30px 0 10px; color:var(--text)}
-  p{margin:0 0 18px; color:var(--secondary); max-width:62ch}
-  ul{margin:0 0 18px; padding-left:22px; color:var(--secondary); max-width:62ch}
-  li{margin-bottom:10px}
-  strong{color:var(--text); font-weight:600}
+  .hero{padding:26px 0 70px; border-bottom:1px solid var(--line)}
+  h1{font-size:36px; line-height:1.2; font-weight:600; letter-spacing:-.019em; margin:0 0 20px; max-width:18ch}
+  .standfirst{font-size:18.5px; color:var(--secondary); margin:0 0 22px; max-width:56ch}
+  .lead{font-size:16px; color:var(--muted); margin:0; max-width:60ch}
 
-  .callout{background:var(--surface); border:1px solid var(--line); border-left:2px solid var(--accent); border-radius:4px; padding:24px 26px; margin:34px 0}
-  .callout p{margin:0 0 14px; color:var(--text)}
-  .callout p:last-child{margin:0}
+  section{padding:64px 0; border-bottom:1px solid var(--line)}
+  h2{font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; font-weight:600; color:var(--muted); margin:0 0 12px}
+  .h2sub{font-size:22px; font-weight:600; letter-spacing:-.012em; margin:0 0 28px; color:var(--text)}
+  p{margin:0 0 18px; color:var(--secondary); max-width:60ch}
 
-  .cols{display:grid; grid-template-columns:1fr 1fr; gap:26px; margin:0 0 22px}
-  .col{border:1px solid var(--line); border-radius:5px; padding:20px 22px; background:var(--surface)}
-  .col h3{margin:0 0 12px; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent)}
-  .col.no h3{color:var(--muted)}
-  .col ul{margin:0; padding-left:19px; font-size:15px}
-  .col li{margin-bottom:9px}
+  .cats{display:flex; flex-wrap:wrap; gap:9px; margin:0}
+  .cat{
+    font-size:13.5px; color:var(--secondary); border:1px solid var(--line);
+    border-radius:3px; padding:7px 13px; background:var(--surface);
+  }
 
-  footer{margin-top:72px; padding:34px 0 76px; border-top:1px solid var(--line); color:var(--muted); font-size:13.5px}
-  footer p{color:var(--muted); font-size:13.5px; margin:0 0 10px}
+  .steps{counter-reset:s; margin:0; padding:0; list-style:none}
+  .steps li{
+    counter-increment:s; padding:22px 0 22px 44px; border-top:1px solid var(--line); position:relative;
+  }
+  .steps li:last-child{border-bottom:1px solid var(--line)}
+  .steps li::before{
+    content:counter(s); position:absolute; left:0; top:24px;
+    font-size:11px; color:var(--accent); font-weight:600; letter-spacing:.06em;
+  }
+  .steps .t{font-size:16.5px; color:var(--text); font-weight:500; margin:0 0 5px}
+  .steps .d{font-size:15px; color:var(--secondary); margin:0}
+
+  .why{padding:24px 0; border-top:1px solid var(--line)}
+  .why:last-of-type{border-bottom:1px solid var(--line)}
+  .why .t{font-size:16.5px; color:var(--text); font-weight:500; margin:0 0 6px}
+  .why .d{font-size:15px; color:var(--secondary); margin:0; max-width:58ch}
+
+  .note{font-size:14.5px; color:var(--muted); max-width:62ch}
+
+  footer{padding:48px 0 84px; color:var(--muted); font-size:13.5px}
+  footer p{color:var(--muted); font-size:13.5px; margin:0 0 10px; max-width:none}
+  footer .legal{margin-top:20px; padding-top:20px; border-top:1px solid var(--line)}
 
   @media (max-width:640px){
-    h1{font-size:27px} .title{padding:48px 0 36px}
     .site{padding-top:30px}
     .burger{display:block}
     nav{display:none; width:100%; flex-direction:column; align-items:flex-start; gap:0; margin-top:20px; border-top:1px solid var(--line)}
     nav a{padding:15px 0; width:100%; border-bottom:1px solid var(--line); font-size:15px}
     .navtoggle:checked ~ nav{display:flex}
-    .cols{grid-template-columns:1fr; gap:16px}
+    h1{font-size:28px; max-width:none}
+    .standfirst{font-size:17px}
+    section{padding:48px 0}
   }
+  .warn{border-left:2px solid var(--accent); padding:4px 0 4px 16px; color:var(--text)}
+  .why ul{margin:8px 0 0; padding-left:18px; color:var(--secondary); font-size:15px}
+  .why li{margin:0 0 6px}
 </style>
 </head>
 <body>
@@ -82,128 +102,102 @@
     </nav>
   </header>
 
-  <div class="title">
+    <p class="crumb"><a href="/sovereign-vault">Sovereign Vault</a> · Support</p>
+
+  <div class="hero">
     <h1>Support</h1>
-    <p class="standfirst">What we can help with, what we cannot, and how to reach a person.</p>
+    <p class="standfirst">Locked out, moving phones, or something not working? Start here.</p>
+    <p class="lead">Sovereign Vault is made by one small company. Mail goes to a person, not a ticket system: <a href="mailto:support@barcalabs.com">support@barcalabs.com</a>.</p>
   </div>
 
-  <main>
+  <section id="forgot-pin">
+    <h2>Forgot your PIN</h2>
+    <p class="h2sub">Your recovery code gets you back in</p>
+    <ol class="steps">
+      <li>
+        <p class="t">Tap “Forgot your PIN?” on the unlock screen</p>
+        <p class="d">Enter the 25-character recovery code you wrote down when you set up the app.</p>
+      </li>
+      <li>
+        <p class="t">Set a new PIN</p>
+        <p class="d">Your records are all still there. You can turn Face ID or fingerprint back on in Settings.</p>
+      </li>
+    </ol>
+    <p style="margin-top:24px">Lost the code as well? Then nobody can open the vault, including us. We hold no copy of your records, your PIN or your code. That's what keeps them private, and it's also why we can't rescue them.</p>
+    <p>If you can still get in but have lost your code, make a new one in Settings. The new code replaces the old one right away. A backup only opens with the code that was active when you made it, so make a fresh backup right after you get a new code.</p>
+  </section>
 
-    <div class="callout">
-      <p><strong>This is not a help desk, and we are not going to pretend it is.</strong> Sovereign
-      Vault is made by one small company, and mail goes to a person rather than a queue.</p>
-      <p>More importantly: there is a category of problem <strong>nobody can solve</strong>, because
-      of how the app is built. Those are listed below rather than buried, so you find out here
-      instead of finding out later.</p>
+  <section id="new-phone">
+    <h2>Moving to a new phone</h2>
+    <p class="h2sub">Bring your vault with a backup file</p>
+    <p>Your phone's own backup won't bring your vault back. This will:</p>
+    <ol class="steps">
+      <li>
+        <p class="t">On your old phone, make a backup</p>
+        <p class="d">Data → App Settings → Back Up My Vault. Save the file to iCloud Drive or Google Drive, so it's there on the new phone. Keep your recovery code somewhere else, like a password manager.</p>
+      </li>
+      <li>
+        <p class="t">On your new phone, install Sovereign Vault and restore</p>
+        <p class="d">When the app asks you to create a PIN, tap “Restore from a backup file.” Pick the file (it ends in .svbackup) and enter your recovery code.</p>
+      </li>
+      <li>
+        <p class="t">Set a PIN for the new phone</p>
+        <p class="d">Your old PIN doesn't come across with a backup. Turn on Face ID or fingerprint afterwards in Settings.</p>
+      </li>
+    </ol>
+    <p class="warn" style="margin-top:24px"><strong>Make a backup before you change phones.</strong> If the old phone is gone and you never made one, the vault can't be brought back. Not by you, and not by us.</p>
+  </section>
+
+  <section id="help">
+    <h2>What we can do</h2>
+    <p class="h2sub">And what nobody can</p>
+    <div class="why">
+      <p class="t">We can</p>
+      <ul>
+        <li>Answer questions about how the app works</li>
+        <li>Take a bug report and tell you what we're doing about it</li>
+        <li>Tell you exactly what the app stores and where</li>
+      </ul>
     </div>
-
-    <h2>What we can and cannot do</h2>
-
-    <div class="cols">
-      <div class="col">
-        <h3>We can</h3>
-        <ul>
-          <li>Answer questions about how the app works</li>
-          <li>Take a bug report and tell you what we're doing about it</li>
-          <li>Tell you exactly what the app stores and where</li>
-          <li>Issue a refund on <strong>Google Play</strong></li>
-        </ul>
-      </div>
-      <div class="col no">
-        <h3>We cannot</h3>
-        <ul>
-          <li>Open your vault, or reset your PIN</li>
-          <li>See your records — we hold no copy of them</li>
-          <li>Issue a refund on the <strong>App Store</strong> — only Apple can</li>
-        </ul>
-      </div>
+    <div class="why">
+      <p class="t">We can't</p>
+      <ul>
+        <li>Open your vault or reset your PIN</li>
+        <li>See your records. We hold no copy of them.</li>
+        <li>Refund an App Store purchase. Only Apple can, at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</li>
+      </ul>
     </div>
+  </section>
 
-    <p>The second column is not a policy choice and it is not us being unhelpful. Your records are
-    encrypted with a key derived from your PIN, and that key exists only on your phone. We have no
-    copy of it and no way to derive one. <strong>If we could open your vault, so could anyone who
-    compelled us to</strong> — which is the entire reason the app is built this way.</p>
-
-    <p><strong>One thing belongs outside that list, because it is a different kind of no.</strong>
-    We do not have a repair tool for a vault whose file has been damaged, and we are not promising
-    one. That is a limit of what we have built, not a law of physics — if you still know your PIN,
-    some of a damaged vault may in principle be readable by tooling that does not exist today. We
-    would rather say that plainly than let it sit in a list of genuine impossibilities and quietly
-    borrow their weight.</p>
-
-    <h2>If you cannot get into your vault</h2>
-
-    <p>Work through these in order. They are ordered by what is most likely to help, not by what is
-    easiest.</p>
-
-    <h3>1. Try your PIN again on a fully restarted app</h3>
-    <p>Close Sovereign Vault completely — swipe it away, don't just switch apps — and reopen it.
-    Some unlock problems are a stale session rather than a wrong PIN.</p>
-
-    <h3>2. If you have an encrypted device backup from before the problem, restore it</h3>
-    <p><strong>This is the only route that has ever brought a vault back, and it only exists on
-    iOS.</strong></p>
-    <ul>
-      <li><strong>On iOS:</strong> the key material sits in the iOS Keychain, and the Keychain is
-      included in <strong>encrypted</strong> iCloud and computer backups. Restoring one of those to
-      your device may bring the key back with it. An <strong>unencrypted</strong> computer backup
-      excludes the Keychain entirely and will not help.</li>
-      <li><strong>On Android:</strong> the key material in the Keystore is excluded from
-      Android's automatic backup, so a restore on its own will not bring your PIN-based access back.
-      <strong>If you set up a recovery code</strong>, the file that code unlocks is a normal file and
-      <em>is</em> carried in backups — deliberately — so on Android a restore plus your recovery code
-      is the route, rather than a restore alone.</li>
-      <li><strong>Face ID and fingerprint unlock never survive a restore</strong>, on either
-      platform. That is expected. Biometric unlock is a shortcut to the same key your PIN reaches —
-      if a restore worked, your PIN still opens the vault and you can turn biometrics back on.</li>
-    </ul>
-    <p>We have to be straight about the confidence here: <strong>this is how the platforms document
-    their own behaviour, and we have not yet run a full restore ourselves to confirm it end to
-    end.</strong> It is worth trying before you do anything else, and we would rather tell you that
-    than imply a certainty we have not earned.</p>
-
-    <h3>3. If neither works</h3>
-    <p>Then the records in that vault are gone, and starting a new vault is the only way forward.
-    Setting a new PIN creates a fresh, empty vault and leaves the old data permanently unreadable.
-    <strong>Nothing about that is reversible, so exhaust step 2 first.</strong></p>
-
+  <section id="known">
     <h2>Things we know about</h2>
+    <p class="h2sub">Worth checking before you write</p>
+    <div class="why">
+      <p class="t">Your watch can stop sending data without telling you</p>
+      <p class="d">Sovereign Vault reads what Apple Health or Health Connect holds. If the app that writes to Health stops (a permission changed, an update reset something, a companion app signed out), the data just stops arriving, and nothing announces it. If a number looks stale, check the app that owns it first. Not every watch writes every metric, either. Some never send HRV to Apple Health, and we can't read a number that was never written.</p>
+    </div>
+    <div class="why">
+      <p class="t">A rare storage defect</p>
+      <p class="d">The database engine the app is built on has a known flaw that can, rarely, lose a recently saved entry without warning. No fixed version exists yet. The <a href="/security#defect">security page</a> explains it in full. It's one more reason to make a backup now and then.</p>
+    </div>
+  </section>
 
-    <h3>Your watch can stop sending data without telling you</h3>
-    <p>Sovereign Vault reads what Apple Health or Health Connect actually holds. If the app that
-    writes to Health stops doing so — a permission changes, an update resets something, a companion
-    app is signed out — <strong>the data simply stops arriving, and nothing announces it.</strong>
-    This has already happened to one of our testers, who lost ten days of readings while both apps
-    appeared to be working.</p>
-    <p>If a metric looks stale, check the app that owns it before assuming Sovereign Vault is
-    broken. It usually isn't, and we would rather say that plainly than let you spend an evening on
-    the wrong problem.</p>
-    <p>Worth knowing separately: <strong>not every watch writes every metric.</strong> Some devices
-    never send heart rate variability to Apple Health at all, regardless of what they show you in
-    their own app. Where that is the case, we cannot read a number that was never written.</p>
-
-    <h3>A storage defect we have not fixed</h3>
-    <p>The database engine the app is built on carries a known flaw that can, rarely, lose a
-    recently saved entry without warning. There is no corrected version available to us yet. It is
-    described in full on the <a href="/security">security page</a>, and it is the reason we suggest
-    copying your record out from time to time.</p>
-
+  <section id="contact">
     <h2>Reaching us</h2>
-    <p><a href="mailto:support@barcalabs.com">support@barcalabs.com</a></p>
-    <p>It goes to a person, not a ticket system. <strong>We are not going to promise a response
-    time we cannot keep</strong> — but every message is read, and there is no queue in between.</p>
-    <p>If you are reporting a problem, these help more than anything else: which phone and OS
-    version, what you did immediately before it happened, and what you expected instead.
-    <strong>Please do not send us your health records.</strong> We do not want them, we have nowhere
-    to put them, and we cannot do anything useful with them.</p>
-
-  </main>
+    <p class="h2sub"><a href="mailto:support@barcalabs.com">support@barcalabs.com</a></p>
+    <p>Every message is read by a person. We won't promise a response time we can't keep.</p>
+    <p>If you're reporting a problem, these help most: which phone and iOS version, what you did just before it happened, and what you expected instead.</p>
+    <p>Please don't send us your health records. We don't need them to help, and we have nowhere safe to keep them.</p>
+  </section>
 
   <footer>
-    <p><a href="/sovereign-vault">Sovereign Vault</a> · <a href="/security">Security</a> ·
-    <a href="/privacy">Privacy policy</a> · <a href="/terms">Terms</a> ·
-    <a href="/">Barca Labs</a></p>
-    <p>© 2026 Barca Labs, LLC</p>
+    <p>Sovereign Vault is a record, not medical advice. It does not diagnose, treat, cure or prevent any condition.</p>
+    <p>Sovereign Vault is made by Barca Labs, LLC · Kansas, United States</p>
+    <p><a href="mailto:support@barcalabs.com">support@barcalabs.com</a> · <a href="tel:+13165302830">316-530-2830</a></p>
+    <div class="legal">
+      <p><a href="/sovereign-vault">Sovereign Vault</a> · <a href="/security">Security</a> · <a href="/privacy">Privacy policy</a> · <a href="/terms">Terms of service</a> · <a href="/">Barca Labs</a></p>
+      <p style="margin-top:10px">© 2026 Barca Labs, LLC</p>
+    </div>
   </footer>
 
 </div>
