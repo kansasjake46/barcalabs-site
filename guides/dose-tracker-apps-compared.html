@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GLP-1, TRT and peptide tracker apps compared (2026) — price, privacy, exports</title>
+<meta name="description" content="Sovereign Vault, Regimen, Shotsy, My TRT App and Glippy compared on price, three-year cost, what each App Privacy label declares, exports and logging. Sourced and dated, September 2026.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Barca Labs">
+<meta property="og:title" content="GLP-1, TRT and peptide tracker apps compared (2026) — price, privacy, exports">
+<meta property="og:description" content="Sovereign Vault, Regimen, Shotsy, My TRT App and Glippy compared on price, three-year cost, what each App Privacy label declares, exports and logging. Sourced and dated, September 2026.">
+<meta property="og:url" content="https://barcalabs.com/guides/dose-tracker-apps-compared">
+<meta property="og:image" content="https://barcalabs.com/og/sovereign-vault.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sovereign Vault: a private tracker for what you take.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://barcalabs.com/guides/dose-tracker-apps-compared">
+<meta property="og:title" content="GLP-1, TRT and peptide tracker apps compared (2026)">
+<meta property="og:description" content="Five protocol trackers compared on price, three-year cost, privacy labels, exports and logging. Every figure sourced and dated.">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230a0b0d'/><g stroke='%23d8b47a' stroke-width='9' fill='none'><path d='M37 11 L53 27'/><path d='M53 37 L37 53'/><path d='M27 53 L11 37'/><path d='M11 27 L27 11'/></g></svg>">
+
+<style>
+  :root{
+    --ink:#0a0b0d; --surface:#14161a; --raise:#191c21; --line:#22262c;
+    --muted:#828994; --secondary:#b6bcc4; --text:#f2efe9; --accent:#d8b47a;
+    --good:#8fc9a5; --warn:#e0b07a;
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--ink); color:var(--text); font-family:var(--sans); font-size:16px; line-height:1.68; -webkit-font-smoothing:antialiased}
+  .wrap{max-width:780px; margin:0 auto; padding:0 28px}
+  a{color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(216,180,122,.3)}
+  a:hover{border-bottom-color:var(--accent)}
+
+  .site{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; padding:38px 0 0}
+  .wordmark{display:inline-flex; flex-direction:column; align-items:flex-start; gap:10px; border-bottom:none}
+  .wordmark .rule{width:40px; height:1px; background:var(--accent)}
+  .wordmark .name{font-size:14px; font-weight:500; letter-spacing:.19em; text-transform:uppercase; color:var(--text)}
+  nav{display:flex; gap:26px; align-items:center}
+  nav a{font-size:13.5px; color:var(--secondary); border-bottom:1px solid transparent}
+  nav a:hover{color:var(--text); border-bottom-color:rgba(216,180,122,.5)}
+  .navtoggle{display:none}
+  .burger{display:none; cursor:pointer; padding:8px; margin:-8px}
+  .burger span{display:block; width:20px; height:1.5px; background:var(--secondary); margin:4px 0}
+
+  .crumb{padding:42px 0 0; font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+  .crumb a{color:var(--muted); border-bottom-color:transparent}
+
+  .title{padding:22px 0 30px}
+  h1{font-size:38px; line-height:1.14; font-weight:600; letter-spacing:-.022em; margin:0 0 18px; max-width:20ch}
+  .byline{font-size:13px; color:var(--muted); margin:0; display:flex; flex-wrap:wrap; gap:8px 16px}
+
+  .answer{
+    background:linear-gradient(180deg, var(--raise), var(--surface));
+    border:1px solid var(--line); border-left:2px solid var(--accent);
+    border-radius:6px; padding:26px 28px; margin:0 0 20px;
+  }
+  .answer .k{font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); font-weight:600; margin:0 0 10px}
+  .answer p{font-size:18px; line-height:1.55; color:var(--text); margin:0 0 14px}
+  .answer p:last-child{margin:0}
+
+  h2{font-size:23px; font-weight:600; letter-spacing:-.014em; margin:54px 0 8px}
+  h3{font-size:16.5px; font-weight:600; margin:30px 0 6px}
+  p{margin:0 0 18px; color:var(--secondary)}
+  strong{color:var(--text); font-weight:600}
+  .sub{color:var(--muted); font-size:14px; margin:0 0 22px}
+  .pull{font-size:20px; line-height:1.5; color:var(--text); border-left:2px solid var(--accent);
+        padding:2px 0 2px 20px; margin:30px 0 30px; max-width:52ch}
+
+  .spec{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:0 0 28px}
+  .spec div{border:1px solid var(--line); border-radius:6px; padding:16px 18px; background:var(--surface)}
+  .spec .t{display:block; color:var(--text); font-weight:600; font-size:15px; margin-bottom:4px}
+  .spec .d{font-size:14px; color:var(--secondary)}
+
+  .tbl{overflow-x:auto; margin:0 0 14px; border:1px solid var(--line); border-radius:6px}
+  table{border-collapse:collapse; width:100%; font-size:14.5px; min-width:620px}
+  thead th{
+    background:var(--surface); color:var(--muted); font-size:11px; letter-spacing:.13em;
+    text-transform:uppercase; font-weight:600; text-align:left; padding:13px 16px; border-bottom:1px solid var(--line);
+  }
+  td{padding:15px 16px; border-bottom:1px solid var(--line); color:var(--secondary); vertical-align:top}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr.ours{background:rgba(216,180,122,.05)}
+  td .app{color:var(--text); font-weight:600; display:block}
+  td .meta{font-size:12.5px; color:var(--muted)}
+  .price{font-family:var(--mono); font-size:13.5px; color:var(--text); white-space:nowrap}
+
+  .tag{display:inline-block; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; font-weight:600;
+       padding:3px 9px; border-radius:3px; border:1px solid; white-space:nowrap}
+  .tag.once{color:var(--good); border-color:rgba(143,201,165,.4); background:rgba(143,201,165,.07)}
+  .tag.sub{color:var(--warn); border-color:rgba(224,176,122,.35); background:rgba(224,176,122,.06)}
+
+
+  .lg{display:block; margin-top:8px}
+  .chip{display:inline-block; font-size:11px; letter-spacing:.06em; font-weight:600; text-transform:uppercase;
+        padding:4px 9px; border-radius:3px; border:1px solid; white-space:nowrap}
+  .chip.yes{color:#9ed7b4; border-color:rgba(143,201,165,.45); background:rgba(143,201,165,.10)}
+  .chip.no{color:#e59b93; border-color:rgba(224,149,140,.40); background:rgba(224,149,140,.08)}
+  .chip.part{color:var(--warn); border-color:rgba(224,176,122,.35); background:rgba(224,176,122,.07)}
+  .chip.np{color:var(--muted); border-color:var(--line); background:rgba(130,137,148,.06)}
+  .lg .chip{margin-right:4px}
+  table.matrix{min-width:720px}
+  table.matrix thead th{text-align:center; font-size:11.5px; letter-spacing:.08em; color:var(--secondary); line-height:1.3}
+  table.matrix thead th.ours{color:var(--accent)}
+  table.matrix tbody th{text-align:left; font-weight:500; font-size:14px; color:var(--text);
+        padding:14px 16px; border-bottom:1px solid var(--line); background:var(--surface);
+        position:sticky; left:0; z-index:1; min-width:210px}
+  table.matrix td{text-align:center; padding:14px 12px}
+  table.matrix td.ours{background:rgba(216,180,122,.06)}
+  table.matrix .cell{display:block; font-size:11.5px; color:var(--muted); margin-top:6px; font-family:var(--mono)}
+  table.matrix tr.cost td{background:rgba(216,180,122,.03)}
+  table.matrix tr.cost td.ours{background:rgba(216,180,122,.09)}
+  table.matrix .big{display:block; font-family:var(--mono); font-size:17px; color:var(--text); letter-spacing:-.01em}
+  table.matrix tr.cost td.ours .big{color:var(--accent)}
+  .checked{font-size:12.5px; color:var(--muted); margin:0 0 30px}
+
+  .cards{display:grid; gap:14px; margin:0 0 20px}
+  .card{border:1px solid var(--line); border-radius:6px; padding:20px 22px; background:var(--surface)}
+  .card h3{margin:0 0 6px; font-size:16px}
+  .card p{margin:0; font-size:14.5px}
+  .card .price{display:block; margin-top:10px; color:var(--muted)}
+
+  .faq{border-top:1px solid var(--line); margin-top:16px}
+  .faq .q{border-bottom:1px solid var(--line); padding:20px 0}
+  .faq .q h3{margin:0 0 6px; font-size:16px; color:var(--text)}
+  .faq .q p{margin:0; font-size:15px}
+
+  .disclosure{
+    border:1px dashed var(--line); border-radius:6px; padding:18px 20px; margin:44px 0 0;
+    font-size:13.5px; color:var(--muted);
+  }
+  .disclosure strong{color:var(--secondary)}
+
+  footer{margin-top:64px; padding:32px 0 80px; border-top:1px solid var(--line); color:var(--muted); font-size:13.5px}
+  footer p{color:var(--muted); font-size:13.5px; margin:0 0 10px}
+
+  @media (max-width:640px){
+    h1{font-size:28px; max-width:none} .answer p{font-size:16.5px} .pull{font-size:17.5px}
+    .spec{grid-template-columns:1fr}
+    .site{padding-top:30px}
+    .burger{display:block}
+    nav{display:none; width:100%; flex-direction:column; align-items:flex-start; gap:0; margin-top:20px; border-top:1px solid var(--line)}
+    nav a{padding:15px 0; width:100%; border-bottom:1px solid var(--line); font-size:15px}
+    .navtoggle:checked ~ nav{display:flex}
+  }
+  .store{display:inline-block; margin:4px 0 0; padding:13px 22px; border:1px solid var(--accent); border-radius:4px; color:var(--text); font-weight:600}
+  .store:hover{background:var(--surface)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="site">
+    <a class="wordmark" href="/"><span class="rule"></span><span class="name">Barca Labs</span></a>
+    <input type="checkbox" id="navtoggle" class="navtoggle" aria-label="Open menu">
+    <label for="navtoggle" class="burger"><span></span><span></span><span></span></label>
+    <nav>
+      <a href="/sovereign-vault">Sovereign Vault</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/security">Security</a>
+    </nav>
+  </header>
+
+  <p class="crumb"><a href="/">Barca Labs</a> · Guides · App comparison</p>
+
+  <div class="title">
+    <h1>The best GLP-1, TRT and peptide tracker apps in 2026, compared</h1>
+    <p class="byline">
+      <span>Barca Labs</span>
+      <span>Published 30 September 2026</span>
+      <span>Prices and privacy labels checked 6 November 2026</span>
+    </p>
+  </div>
+
+  <div class="answer">
+    <p class="k">Short answer</p>
+    <p>Five apps cover most of this category, and each one is built for a different person.
+    <strong>Shotsy</strong> is built for GLP-1s. <strong>Regimen</strong> is built around the
+    injection. <strong>My TRT App</strong> is built around lab results. <strong>Glippy</strong> is
+    the cheapest subscription.</p>
+    <p><strong>Sovereign Vault</strong> is built for the whole picture. Your compounds, labs,
+    training, sleep and weight sit on one timeline, so you can see what’s working and what
+    isn’t. It’s the only one you buy once: $34.99, no subscription, no account.</p>
+    <p>It’s also the only one that logs a dose right from the reminder, without opening the
+    app. And its export is the only one built to be read, by your doctor or by the AI you already
+    use.</p>
+    <p><a class="store" href="https://apps.apple.com/us/app/id6798454321">Get Sovereign Vault on the App Store</a></p>
+  </div>
+
+  <h2>At a glance</h2>
+  <p class="sub">Features checked 8 October 2026 (Regimen: 30 September); prices and privacy labels re-checked 6 November 2026. All against each developer's own App Store listing or website. <span class="lg"><span class="chip yes">Yes</span> has it <span class="chip no">No</span> does not <span class="chip np">Not published</span> not stated by the developer</span></p>
+
+  <div class="tbl matrixwrap">
+  <table class="matrix">
+    <thead>
+      <tr>
+        <th>&nbsp;</th>
+        <th class="ours">Sovereign<br>Vault</th>
+        <th>Regimen</th>
+        <th>Shotsy</th>
+        <th>My TRT<br>App</th>
+        <th>Glippy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Buy once, no subscription</th>
+        <td class="ours"><span class="chip yes">Yes</span><span class="cell">$34.99</span></td>
+        <td><span class="chip no">No</span><span class="cell">$39.99/yr</span></td>
+        <td><span class="chip no">No</span><span class="cell">$39.99–$59.99/yr</span></td>
+        <td><span class="chip no">No</span><span class="cell">$99.99/yr</span></td>
+        <td><span class="chip no">No</span><span class="cell">$24.99/yr</span></td>
+      </tr>
+      <tr class="cost">
+        <th scope="row">What it costs you over 3 years</th>
+        <td class="ours"><span class="big">$34.99</span><span class="cell">once, then nothing</span></td>
+        <td><span class="big">$119.97</span><span class="cell">3 × $39.99</span></td>
+        <td><span class="big">$119.97–$179.97</span><span class="cell">3 × yearly plan</span></td>
+        <td><span class="big">$299.97</span><span class="cell">3 × $99.99</span></td>
+        <td><span class="big">$74.97</span><span class="cell">3 × $24.99</span></td>
+      </tr>
+      <tr>
+        <th scope="row">Log from the reminder, app closed</th>
+        <td class="ours"><span class="chip yes">Yes</span></td>
+        <td><span class="chip np">Not published</span></td>
+        <td><span class="chip np">Not published</span></td>
+        <td><span class="chip np">Not published</span></td>
+        <td><span class="chip np">Not published</span></td>
+      </tr>
+      <tr>
+        <th scope="row">Export written to be read by a person or an AI</th>
+        <td class="ours"><span class="chip yes">Yes</span><span class="cell">text, brief, full spreadsheet</span></td>
+        <td><span class="chip np">Not published</span></td>
+        <td><span class="chip part">PDF only</span></td>
+        <td><span class="chip part">JSON backup</span></td>
+        <td><span class="chip np">Not published</span></td>
+      </tr>
+      <tr>
+        <th scope="row">Training logged on the same timeline</th>
+        <td class="ours"><span class="chip yes">Yes</span></td>
+        <td><span class="chip np">Not published</span></td>
+        <td><span class="chip no">No</span></td>
+        <td><span class="chip np">Not published</span></td>
+        <td><span class="chip no">No</span></td>
+      </tr>
+      <tr>
+        <th scope="row">Bloodwork and wearable readings</th>
+        <td class="ours"><span class="chip yes">Yes</span></td>
+        <td><span class="chip yes">Yes</span></td>
+        <td><span class="chip part">Weight, Apple Health</span></td>
+        <td><span class="chip yes">Yes</span></td>
+        <td><span class="chip part">Weight only</span></td>
+      </tr>
+      <tr>
+        <th scope="row">Works with no account at all</th>
+        <td class="ours"><span class="chip yes">Yes</span></td>
+        <td><span class="chip np">Not published</span></td>
+        <td><span class="chip np">Not published</span></td>
+        <td><span class="chip no">No</span><span class="cell">sign-in required</span></td>
+        <td><span class="chip part">Local use only</span></td>
+      </tr>
+      <tr>
+        <th scope="row">Health data collected and linked to you</th>
+        <td class="ours"><span class="chip yes">None</span></td>
+        <td><span class="chip no">Yes</span><span class="cell">+ contact info, content, IDs</span></td>
+        <td><span class="chip part">Not linked</span></td>
+        <td><span class="chip yes">None</span><span class="cell">email, name linked</span></td>
+        <td><span class="chip no">Yes</span><span class="cell">+ contact info, purchases, usage</span></td>
+      </tr>
+      <tr>
+        <th scope="row">Your record stays readable if you stop paying</th>
+        <td class="ours"><span class="chip yes">Yes</span></td>
+        <td><span class="chip np">Not published</span></td>
+        <td><span class="chip np">Not published</span></td>
+        <td><span class="chip np">Not published</span></td>
+        <td><span class="chip np">Not published</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="checked">Sources, prices and privacy labels read on 6 November 2026:
+  <a href="https://apps.apple.com/us/app/regimen-peptide-tracker/id6753905449" rel="nofollow noopener">Regimen</a> ·
+  <a href="https://apps.apple.com/us/app/shotsy-glp-1-tracker/id6499510249" rel="nofollow noopener">Shotsy</a> ·
+  <a href="https://www.mytrt.app/" rel="nofollow noopener">My TRT App</a> ·
+  <a href="https://apps.apple.com/us/app/glippy-private-glp-1-tracker/id6776709055" rel="nofollow noopener">Glippy</a>.
+  "Not published" means the developer doesn’t say. It doesn’t mean the app can’t do it. Three-year totals assume today’s price holds. Every app here also has a free tier with fewer features. Prices are for the US App Store.</p>
+
+  <h2>What $34.99 once actually buys</h2>
+  <div class="spec">
+    <div><span class="t">The whole picture</span><span class="d">Compounds, labs, training and
+    your watch data, side by side. Not spread across four apps.</span></div>
+    <div><span class="t">Add anything</span><span class="d">If a compound isn’t in the
+    library, add it. It works exactly like one that is.</span></div>
+    <div><span class="t">No account, no sign-in</span><span class="d">Your records are encrypted
+    on your phone, behind your PIN. We run no server, so there’s nothing for us to read, sell,
+    lose or hand over.</span></div>
+    <div><span class="t">Your record is never held hostage</span><span class="d">Reading and
+    exporting are free forever. Paying only unlocks new entries.</span></div>
+    <div><span class="t">It moves with you</span><span class="d">An encrypted backup carries your
+    whole vault to your next phone. Only your recovery code opens it.</span></div>
+  </div>
+  <p>Fourteen days free from your first entry. Then $34.99, once. Nothing renews.</p>
+
+  <h2>An export you can actually read</h2>
+  <p>Most trackers treat export as an afterthought. Shotsy makes a PDF report. My TRT App offers a
+  JSON backup. Regimen says you can export, but doesn’t say in what format.</p>
+  <p>Sovereign Vault’s export is built for what people really do with a record. They hand it
+  to a doctor, or they paste it into an AI and ask questions. So everything comes out at once:
+  every dose, what you took and what you missed, labs, training, weight, blood pressure and your
+  watch data. It reads in order, and the numbers come with plain explanations.</p>
+  <p>There’s a short brief for a quick appointment and a full record you can paste anywhere. And there’s a spreadsheet with one row per day, plus a tab each for doses, labs, training, weight and vitals. Open it and your whole protocol is right there. A PDF is a picture of your data. This is your data.</p>
+  <p>It’s honest about itself, too. The on-protocol figure always shows its split: taken,
+  late, skipped, not logged. Nobody reading it gets a rounded number.</p>
+
+  <h2>Log without opening the app</h2>
+  <p>A tracker only works if you log. Most reminders still make you unlock the phone, find the app,
+  find the compound and tap four times. That’s where records die. It’s why so many people
+  end up with two weeks of data and then a gap.</p>
+  <p>In Sovereign Vault, the reminder is the log button. Press and hold it, tap Log all, and
+  you’re done. The app never opens.</p>
+  <p>The reminder shows how many doses are due, never what they are. A phone left face-up on a
+  desk gives nothing away.</p>
+  <p>None of the other apps here say they can log from the reminder. Shotsy lists reminders and
+  home-screen widgets. Regimen lists smart reminders. If that’s changed since 30 September
+  2026, tell us and we’ll update this.</p>
+
+  <h2>Why so many of these are free</h2>
+  <p>Every app costs money to build. If you’re not paying up front, the money comes from
+  somewhere else: a subscription later, or your data.</p>
+  <p>You don’t have to guess which. Apple makes every developer declare what they collect.
+  It’s on the App Store listing, under App Privacy. Most people scroll right past it.</p>
+
+  <p class="pull">Read the label, not the marketing. Every app here says it respects your privacy.
+  Their labels don’t all agree.</p>
+
+  <p>That’s not an accusation. It’s just the difference between an app that collects
+  your health data and one built so it can’t.</p>
+
+  <h2>What the subscriptions cost</h2>
+  <p>Three years of a $39.99 plan is $119.97. Three years of a $99.99 plan is $299.97. Three years
+  of Sovereign Vault is $34.99. So is year ten.</p>
+  <p>A protocol record gets more valuable the longer you keep it. That’s exactly where a
+  subscription works against you.</p>
+  <p>To be fair, subscriptions pay for ongoing development. An app you buy once has to earn its
+  keep another way. Ours does it by keeping your record readable, and yours, for as long as you
+  want it.</p>
+
+  <h2>Which one is best for you?</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>You want the whole picture in one place</h3>
+      <p>Your health isn’t one compound. It’s your compounds, hormones, peptides and
+      supplements, with your labs, training, sleep and weight right beside them. Sovereign Vault
+      puts all of it on one timeline. You see the trends. You see what’s working and what
+      isn’t. Log from the reminder, export for your doctor or your AI, and pay once.</p>
+    </div>
+    <div class="card">
+      <h3>You take a GLP-1 and nothing else</h3>
+      <p>Shotsy. It’s built for exactly that and has the longest track record here. It also
+      estimates medication levels between doses, which we don’t.</p>
+    </div>
+    <div class="card">
+      <h3>You mainly want help with the injection itself</h3>
+      <p>Regimen. It focuses on reconstitution math, vial inventory and site rotation. If
+      that’s the part you want handled, it handles it well.</p>
+    </div>
+    <div class="card">
+      <h3>Your labs matter more than anything else</h3>
+      <p>My TRT App. It goes deeper on lab analysis. Note that it requires an Apple or Google
+      sign-in, so your record lives on their servers.</p>
+    </div>
+  </div>
+
+  <h2>Where the others are stronger</h2>
+  <p>Every honest comparison admits something. Here’s ours. Regimen handles injection
+  logistics better: reconstitution math, vial inventory, progress photos. Shotsy estimates
+  medication levels between doses and has the longest track record. My TRT App goes deeper on
+  labs. If one of those is all you need, get that app.</p>
+  <p>Here’s what none of them do. Put your training on the same timeline as your compounds,
+  labs and sleep. Log from the reminder with the app closed. Give you a record built to be read.
+  Sell you the app once instead of renting it to you.</p>
+  <p><strong>About Mojo:</strong> it often shows up in these lists at $4.99. It tracks habits and
+  gives you a daily score. It doesn’t track compounds or doses, so it isn’t really an
+  alternative.</p>
+
+  <h2>How we checked</h2>
+  <p>We read every price and privacy label on 6 November 2026, from each app’s own listing
+  or website. Every row links to its source. We didn’t estimate anything or copy it from an
+  older article. Prices are for the US App Store and differ elsewhere.</p>
+  <p>If anything changes, we update the page or take it down. An out-of-date comparison is a wrong
+  one.</p>
+
+  <h2>Questions people ask</h2>
+  <div class="faq">
+    <div class="q">
+      <h3>Can I buy a dose tracker once instead of subscribing?</h3>
+      <p>Yes. Sovereign Vault is $34.99 once, with no subscription and no account. Shotsy, Regimen, My TRT App and Glippy are all subscriptions. Checked 6 November 2026.</p>
+    </div>
+    <div class="q">
+      <h3>Why are GLP-1 and TRT tracker apps free?</h3>
+      <p>Because they make money later, or from your data. Check the App Privacy section of any listing. It says what the developer collects and whether it’s linked to you. Regimen and Glippy declare health data linked to you. Shotsy declares health data collected for analytics, not linked to you. Sovereign Vault declares one identifier, for its update check: not linked to you, not used for tracking, and no health data at all.</p>
+    </div>
+    <div class="q">
+      <h3>What happens to my record if I stop paying?</h3>
+      <p>In Sovereign Vault, nothing. Reading and exporting stay free forever. Paying only unlocks new entries. With a subscription app, check what happens to your history when a billing period ends.</p>
+    </div>
+    <div class="q">
+      <h3>Can one app track semaglutide, tirzepatide, testosterone, supplements and workouts together?</h3>
+      <p>Sovereign Vault does, training included, all on one timeline. If something isn’t in the library, you add it. Regimen covers compounds, labs and Apple Health data. Shotsy is GLP-1 only. My TRT App is built around testosterone.</p>
+    </div>
+    <div class="q">
+      <h3>Which dose tracker works without an account?</h3>
+      <p>Sovereign Vault has no account and no sign-in. My TRT App requires an Apple or Google sign-in. Glippy says you need an account for cloud backup, but not to use it on your phone.</p>
+    </div>
+    <div class="q">
+      <h3>Can I get my data out?</h3>
+      <p>Sovereign Vault exports your whole record as text you can paste anywhere, or as a spreadsheet. An encrypted backup moves everything to a new phone. Whatever app you pick, check its export before you log years of data in it.</p>
+    </div>
+  </div>
+
+  <div class="disclosure">
+    <p><strong>Disclosure:</strong> Barca Labs makes Sovereign Vault. We have no relationship with
+    any other developer on this page, and no affiliate deals with any of them. Everything we say
+    about another app comes from that developer’s own listing or website, linked and dated
+    above. If we got something wrong, email
+    <a href="mailto:support@barcalabs.com">support@barcalabs.com</a> and we’ll fix it.</p>
+    <p style="margin-top:12px">Sovereign Vault is a record, not medical advice. It does not
+    diagnose, treat, cure or prevent any condition, and it is not a medical device. Talk to your
+    doctor before you change anything you take.</p>
+  </div>
+
+  <footer>
+    <p><a href="/sovereign-vault">Sovereign Vault</a> · <a href="/privacy">Privacy policy</a> ·
+    <a href="/security">Security</a> · <a href="/terms">Terms</a> · <a href="/support">Support</a></p>
+    <p>© 2026 Barca Labs, LLC</p>
+  </footer>
+
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I buy a dose tracker once instead of subscribing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Sovereign Vault is $34.99 once, with no subscription and no account. Shotsy, Regimen, My TRT App and Glippy are all subscriptions. Checked 6 November 2026."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why are GLP-1 and TRT tracker apps free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because they make money later, or from your data. Check the App Privacy section of any listing. It says what the developer collects and whether it’s linked to you. Regimen and Glippy declare health data linked to you. Shotsy declares health data collected for analytics, not linked to you. Sovereign Vault declares one identifier, for its update check: not linked to you, not used for tracking, and no health data at all."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to my record if I stop paying?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In Sovereign Vault, nothing. Reading and exporting stay free forever. Paying only unlocks new entries. With a subscription app, check what happens to your history when a billing period ends."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can one app track semaglutide, tirzepatide, testosterone, supplements and workouts together?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sovereign Vault does, training included, all on one timeline. If something isn’t in the library, you add it. Regimen covers compounds, labs and Apple Health data. Shotsy is GLP-1 only. My TRT App is built around testosterone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which dose tracker works without an account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sovereign Vault has no account and no sign-in. My TRT App requires an Apple or Google sign-in. Glippy says you need an account for cloud backup, but not to use it on your phone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get my data out?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sovereign Vault exports your whole record as text you can paste anywhere, or as a spreadsheet. An encrypted backup moves everything to a new phone. Whatever app you pick, check its export before you log years of data in it."
+      }
+    }
+  ]
+}
+</script>
+</body>
+</html>

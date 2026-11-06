@@ -3,8 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Get notified — Sovereign Vault</title>
-<meta name="description" content="Sovereign Vault is in testing. Leave an email and we'll tell you when it's on the App Store. Email only — nothing else.">
+<title>Sovereign Vault: on iPhone now — Barca Labs</title>
+<meta name="description" content="Sovereign Vault is on the App Store for iPhone. Android is next. Google Play to follow.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Barca Labs">
+<meta property="og:title" content="Sovereign Vault: on iPhone now — Barca Labs">
+<meta property="og:description" content="Sovereign Vault is on the App Store for iPhone. Android is next. Google Play to follow.">
+<meta property="og:url" content="https://barcalabs.com/notify">
+<meta property="og:image" content="https://barcalabs.com/og/sovereign-vault.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sovereign Vault: a private tracker for what you take.">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="noindex">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%230a0b0d'/><g stroke='%23d8b47a' stroke-width='9' fill='none'><path d='M37 11 L53 27'/><path d='M53 37 L37 53'/><path d='M27 53 L11 37'/><path d='M11 27 L27 11'/></g></svg>">
 
@@ -48,6 +58,9 @@
   .hp{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden}
   .sr{position:absolute; left:-9999px}
 
+  .store{display:inline-block; margin:6px 0 30px; padding:14px 24px; border:1px solid var(--accent); border-radius:4px; color:var(--text); font-weight:600}
+  .store:hover{background:var(--surface)}
+
   .fine{font-size:14.5px; color:var(--muted); margin:0 0 34px; max-width:56ch}
   .fine strong{color:var(--secondary)}
 
@@ -69,32 +82,14 @@
   </header>
 
   <main>
-    <h1>Glad you found us early.</h1>
+    <h1>On iPhone now. Android is next.</h1>
 
-    <p><strong>The hard part isn't running your protocol. It's tracking it</strong> — so you know
-    what's working, what needs adjustment, and what just flat out isn't working like you hoped.</p>
+    <p><strong>Sovereign Vault is on the App Store.</strong> Doses, labs, workouts and wearables
+    on one timeline, encrypted on your phone. No account, no server, no subscription. Pay once.</p>
 
-    <p>You take this seriously — real time, real money. So all of it goes in one place: every
-    compound, every dose, every workout, every lab, every night of sleep your watch recorded — on
-    one timeline where you can see them against each other.</p>
+    <a class="store" href="https://apps.apple.com/us/app/id6798454321">Get it on the App Store</a>
 
-    <p>Easy to log, easy to look back on, and yours alone — encrypted on your phone, where only
-    you can open it. When you want a second opinion, the whole record copies out in one go: into
-    the AI you already use, or off to your doctor.</p>
-
-    <p>It's in testing now. Leave an email and you'll know the day it lands on the App Store.</p>
-
-    <form method="POST" action="/api/notify">
-      <label class="sr" for="email">Email address</label>
-      <input type="email" id="email" name="email" placeholder="your@email.com"
-             required autocomplete="email" spellcheck="false" autocapitalize="off">
-      <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <button type="submit">Notify me</button>
-    </form>
-
-    <p class="fine"><strong>Just the email.</strong> We don't want your name, your phone, or a
-    list of what you're taking. We'll only ever write to you about Sovereign Vault, and you can
-    unsubscribe in a click.</p>
+    <p>On Android? It's coming to Google Play. Check back here.</p>
 
     <p class="fine"><a href="/sovereign-vault">More about the app</a> ·
     <a href="/privacy">Privacy</a></p>
