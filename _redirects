@@ -1,0 +1,7 @@
+# Short links for texts, the share image and click counting.
+# Coordination #675 (/app) and #670 item 5 (/go/app-store).
+# Cloudflare Pages _redirects: <from> <to> <status>
+/app       https://apps.apple.com/us/app/id6798454321  302
+/app/      https://apps.apple.com/us/app/id6798454321  302
+/go/app-store   https://apps.apple.com/us/app/id6798454321  302
+/go/app-store/  https://apps.apple.com/us/app/id6798454321  302
